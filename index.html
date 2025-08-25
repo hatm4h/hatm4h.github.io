@@ -5,71 +5,103 @@
 <title>موقعي التعليمي</title>
 <style>
    body {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 18px; /* حجم الخط للكمبيوتر */
-     line-height: 1.6;
-     color: #222;
-     padding: 20px;
-     text-align: center;
-     background: #f0f4f8;
-   }
-   h1 {
-     color: #0077cc;
-     font-size: 32px;
-     margin-bottom: 20px;
-   }
-   p {
-     font-size: 20px;
-     margin-bottom: 30px;
-   }
-   ul {
-     list-style: none;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin: 0;
      padding: 0;
+     background: #f4f7f8;
+     color: #333;
+     text-align: center;
    }
-   li {
-     margin: 15px 0;
-   }
-   a {
-     display: inline-block;
+   header {
      background: #0077cc;
      color: white;
+     padding: 40px 20px;
+     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+   }
+   header h1 {
+     font-size: 36px;
+     margin: 0 0 10px 0;
+   }
+   header p {
+     font-size: 20px;
+     margin: 0;
+   }
+   main {
+     padding: 40px 20px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 20px;
+   }
+   .section {
+     background: white;
+     border-radius: 12px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     width: 220px;
+     padding: 30px 20px;
+     transition: transform 0.3s, box-shadow 0.3s;
+   }
+   .section:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+   }
+   .section a {
      text-decoration: none;
-     padding: 15px 30px;
-     border-radius: 8px;
+     color: #0077cc;
      font-weight: bold;
      font-size: 20px;
-     transition: 0.3s;
+     display: block;
+     margin-top: 10px;
    }
-   a:hover {
-     background: #005fa3;
+   .section-icon {
+     font-size: 50px;
+     margin-bottom: 15px;
+     color: #0077cc;
    }
    /* تكبير الخط على الجوال */
    @media (max-width: 600px) {
-     body {
-       font-size: 24px !important;
+     header h1 {
+       font-size: 42px;
      }
-     h1 {
-       font-size: 42px !important;
+     header p {
+       font-size: 24px;
      }
-     p {
-       font-size: 28px !important;
+     .section {
+       width: 90%;
+       padding: 30px;
      }
-     a {
-       font-size: 28px !important;
-       padding: 20px 40px !important;
+     .section a {
+       font-size: 28px;
+     }
+     .section-icon {
+       font-size: 60px;
      }
    }
 </style>
 </head>
 <body>
+<header>
 <h1>👋 أهلاً بك في موقعي التعليمي</h1>
-<p>اختر القسم الذي تريد استكشافه:</p>
-<ul>
-<li><a href="words.html">📖 كلمات</a></li>
-<li><a href="examples.html">✍️ أمثلة</a></li>
-<li><a href="emails.html">📧 إيميلات</a></li>
-<li><a href="vocabulary.html">📚 مفردات</a></li>
-</ul>
+<p>استكشف الأقسام التعليمية وتعلم اللغة الألمانية بسهولة</p>
+</header>
+<main>
+<div class="section">
+<div class="section-icon">📖</div>
+<a href="words.html">كلمات</a>
+</div>
+<div class="section">
+<div class="section-icon">✍️</div>
+<a href="examples.html">أمثلة</a>
+</div>
+<div class="section">
+<div class="section-icon">📧</div>
+<a href="emails.html">إيميلات</a>
+</div>
+<div class="section">
+<div class="section-icon">📚</div>
+<a href="vocabulary.html">مفردات</a>
+</div>
+</main>
 </body>
 </html>
 
