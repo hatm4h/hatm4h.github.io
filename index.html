@@ -1,60 +1,37 @@
-<head>
-<meta charset="UTF-8">
-<title>موقعي</title>
-<!-- هنا ألصق التنسيقات -->
 <style>
+ body {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 18px; /* حجم الخط الافتراضي للكمبيوتر */
+   line-height: 1.6;
+   color: #222;
+   padding: 20px;
+   text-align: center;
+   background: #f9f9f9;
+ }
+ a {
+   text-decoration: none;
+   display: inline-block;
+   background: #0077cc;
+   color: white;
+   padding: 12px 20px;
+   border-radius: 6px;
+   font-weight: bold;
+   transition: 0.3s;
+ }
+ a:hover {
+   background: #005fa3;
+ }
+ /* تكبير الخط على الشاشات الصغيرة (الجوال) */
+ @media (max-width: 600px) {
    body {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 18px;
-     line-height: 1.6;
-     color: #222;
-     padding: 10px;
-   }
-   @media (max-width: 600px) {
-     body {
-       font-size: 20px;
-     }
-   }
-</style>
-</head>
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-<meta charset="UTF-8">
-<title>موقعي التعليمي</title>
-<style>
-   body {
-     font-family: Arial, Helvetica, sans-serif;
-     font-size: 18px;
-     line-height: 1.6;
-     color: #222;
-     padding: 20px;
-     background: #f9f9f9;
-     text-align: center;
-   }
-   h1 {
-     color: #0077cc;
-   }
-   ul {
-     list-style: none;
-     padding: 0;
-   }
-   li {
-     margin: 15px 0;
+     font-size: 20px; /* أكبر للجوال */
    }
    a {
-     text-decoration: none;
-     display: inline-block;
-     background: #0077cc;
-     color: white;
-     padding: 12px 20px;
-     border-radius: 6px;
-     font-weight: bold;
-     transition: 0.3s;
+     padding: 15px 25px; /* تكبير الأزرار للجوال */
+     font-size: 20px;
    }
-   a:hover {
-     background: #005fa3;
-   }
+ }
+</style>
 </style>
 </head>
 <body>
@@ -68,5 +45,6 @@
 </ul>
 </body>
 </html>
+
 
 
