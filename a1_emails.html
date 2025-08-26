@@ -1,105 +1,188 @@
+
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<title>📧 إيميلات مستوى A1</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>إيميل تجريبي بتصميم خرافي</title>
 <style>
-   body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; padding:0; background:#f4f7f8; color:#333; }
-   header { background:#0077cc; color:white; padding:40px 20px; text-align:center; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-   header h1{ font-size:36px; margin:0 0 10px 0;}
-   header p{ font-size:20px; margin:0;}
-   main{ padding:40px 20px; display:flex; flex-direction:column; gap:20px; align-items:center;}
-   .email-card{ background:white; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); width:90%; max-width:1000px; padding:25px 20px; text-align:right; transition: transform 0.3s;}
-   .email-card:hover{ transform: scale(1.02);}
-   .email-card h2{ color:#0077cc; font-size:26px; margin-bottom:10px;}
-   .email-card p{ font-size:18px; margin:8px 0;}
-   .email-card p span{ font-weight:bold;}
-   .zweck{ background:#e0f0ff; border-left:4px solid #0077cc; padding:10px; border-radius:6px; margin-top:10px;}
-   @media (max-width:600px){
-     header h1{ font-size:42px;}
-     header p{ font-size:24px;}
-     .email-card h2{ font-size:28px;}
-     .email-card p{ font-size:20px;}
+ :root{
+   --bg1:#0f172a; --bg2:#1e293b; --acc1:#22d3ee; --acc2:#a78bfa;
+   --card-bg: rgba(255,255,255,0.10); --card-brd: rgba(255,255,255,0.25);
+   --text:#e5e7eb; --muted:#cbd5e1;
+ }
+ @media (prefers-color-scheme: light){
+   :root{
+     --bg1:#dbeafe; --bg2:#f5f3ff; --acc1:#0ea5e9; --acc2:#7c3aed;
+     --card-bg: rgba(255,255,255,0.75); --card-brd: rgba(0,0,0,0.08);
+     --text:#0f172a; --muted:#334155;
    }
+ }
+ *{box-sizing:border-box}
+ body{
+   margin:0; font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+   background: radial-gradient(1200px 800px at 20% 10%, var(--acc1), transparent 40%),
+               radial-gradient(1000px 700px at 90% 20%, var(--acc2), transparent 45%),
+               linear-gradient(135deg, var(--bg1), var(--bg2));
+   color:var(--text);
+   min-height:100vh;
+   display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+ }
+ header{
+   width:100%; text-align:center; padding:40px 16px 20px;
+   position:relative; overflow:hidden;
+ }
+ .title{
+   font-size:clamp(28px, 6vw, 44px); margin:0 0 6px; font-weight:800; letter-spacing:.5px;
+ }
+ .subtitle{ margin:0; font-size:clamp(16px, 3.4vw, 20px); color:var(--muted);}
+ .halo{
+   position:absolute; inset:-30% -10% auto auto; width:60vmax; height:60vmax;
+   background:radial-gradient(circle at center, rgba(255,255,255,.12), transparent 60%);
+   filter: blur(40px); pointer-events:none; transform:rotate(15deg);
+ }
+ main{ width:min(1100px, 92%); padding:20px 0 60px; }
+ .card{
+   position:relative; border-radius:18px; padding:24px;
+   background: var(--card-bg); border:1px solid var(--card-brd);
+   box-shadow: 0 8px 40px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.08);
+   backdrop-filter: blur(10px);
+   animation: pop .6s ease both;
+ }
+ @keyframes pop{ from{ transform: translateY(12px); opacity:0 } to{ transform: none; opacity:1 } }
+ .badge{
+   display:inline-flex; align-items:center; gap:10px;
+   background: linear-gradient(90deg, var(--acc1), var(--acc2));
+   color:#fff; padding:10px 14px; border-radius:999px; font-weight:700;
+   box-shadow: 0 6px 20px rgba(0,0,0,.18);
+   font-size:clamp(14px, 3.2vw, 16px);
+ }
+ .grid{
+   display:grid; gap:18px; margin-top:18px;
+   grid-template-columns: 1fr;
+ }
+ .row{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:space-between}
+ .row h2{ margin:10px 0 0; font-size:clamp(20px, 4.5vw, 26px)}
+ .actions{ display:flex; gap:10px; flex-wrap:wrap }
+ button{
+   border:1px solid var(--card-brd); background:rgba(255,255,255,.12);
+   color:var(--text); padding:10px 14px; border-radius:10px; cursor:pointer;
+   font-size:clamp(14px, 3.2vw, 16px);
+   transition:.2s transform ease, .2s background ease, .2s opacity ease;
+ }
+ button:hover{ transform: translateY(-1px); background: rgba(255,255,255,.18) }
+ button:active{ transform: translateY(0) scale(.98) }
+ .panel{
+   padding:16px 14px; border-radius:14px; border:1px dashed var(--card-brd);
+   background: rgba(255,255,255,.06);
+ }
+ /* اللغات */
+ .de{ direction:ltr; text-align:left; }
+ .ar{ direction:rtl; text-align:right; }
+ .block-title{
+   margin:0 0 8px; font-weight:800; letter-spacing:.3px;
+   font-size:clamp(16px, 3.6vw, 18px); color:var(--muted);
+ }
+ .content{
+   font-size:clamp(18px, 4.6vw, 20px); line-height:1.9; margin:0;
+   white-space:pre-wrap;
+ }
+ .reasons{ margin:12px 0 0; padding:0 0 0 18px; }
+ .reasons li{ margin:6px 0; font-size:clamp(16px, 4vw, 18px); }
+ footer{ text-align:center; color:var(--muted); margin-top:22px; font-size:clamp(12px, 3vw, 14px) }
+ /* شارة متحركة لطيفة */
+ .shine{
+   position:relative; overflow:hidden;
+ }
+ .shine::after{
+   content:""; position:absolute; inset:0; transform:skewX(-22deg) translateX(-120%);
+   background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+   animation: shine 2.8s linear infinite;
+ }
+ @keyframes shine{ to{ transform:skewX(-22deg) translateX(120%)}}
 </style>
 </head>
 <body>
 <header>
-<h1>📧 إيميلات مستوى A1</h1>
-<p>تعلم كتابة إيميلات متنوعة باللغة الألمانية (صديق، رسمي، شركات…)</p>
+<div class="halo"></div>
+<h1 class="title">إيميل تجريبي بتصميم خرافي</h1>
+<p class="subtitle">نموذج احترافي + ترجمة + أزرار نسخ وإخفاء/إظهار الترجمة – جاهز للجوال والكمبيوتر</p>
 </header>
 <main>
-<!-- إيميل 1 -->
-<div class="email-card">
-<h2>إيميل 1: لصديق</h2>
-<p><span>ألماني:</span> Hallo Jakob, ich habe gehört, dass du bald deine Spanischprüfung machst. Das ist toll! Bist du nervös? Was musst du da genau machen? Hast du viel gelernt und geübt? Ich bin mir sicher, dass du es gut schaffen wirst. Versuche ruhig zu bleiben und alles Schritt für Schritt zu machen. Denk daran, dass Übung hilft. Ich wünsche dir viel Erfolg! Schreib mir danach, wie es gelaufen ist.</p>
-<p><span>ترجمة:</span> مرحبًا يا ياكوب، لقد سمعت أنك ستجري قريبًا اختبار اللغة الإسبانية. هذا رائع! هل أنت متوتر؟ ماذا يجب أن تفعل بالضبط؟ هل درست وتدربت كثيرًا؟ أنا متأكد أنك ستنجح جيدًا. حاول أن تبقى هادئًا وأن تقوم بكل شيء خطوة بخطوة. تذكر أن التدريب يساعد دائمًا. أتمنى لك الكثير من النجاح! أرسل لي بعد ذلك كيف كان الاختبار.</p>
-<div class="zweck">
-<p>سبب كتابة الإيميل:</p>
-<ul>
-<li>تهنئة صديق قبل اختبار.</li>
-<li>تشجيع وصقل الثقة بالنفس.</li>
-<li>تدريب على كتابة جمل طويلة ومهذبة.</li>
+<div class="card">
+<div class="row">
+<span class="badge shine">A1 · غير رسمي (لصديق)</span>
+<div class="actions">
+<button id="copyDe">نسخ الألماني</button>
+<button id="toggleTr">إظهار/إخفاء الترجمة</button>
+<button id="printPg">طباعة/حفظ PDF</button>
+</div>
+</div>
+<div class="grid">
+<section class="panel de" id="dePanel">
+<h3 class="block-title">Deutsch (الألمانية)</h3>
+<p class="content" id="deText">
+Hallo Jakob,
+ich hoffe, es geht dir gut und du hast eine entspannte Woche. Ich wollte dir kurz schreiben, weil wir uns am Samstag treffen möchten. Wir planen, im Stadtpark ein kleines Picknick zu machen. Jeder bringt etwas mit: ich bringe Brot, Käse und Saft. Kannst du vielleicht Obst oder Kekse mitbringen? Treffpunkt ist um 15:00 Uhr am großen Brunnen. Wenn es regnet, gehen wir ins Café neben dem Park. Sag mir bitte heute Abend Bescheid, ob die Zeit passt. Ich freue mich sehr, dich zu sehen!
+Viele Grüße
+Max
+</p>
+</section>
+<section class="panel ar" id="trPanel">
+<h3 class="block-title">الترجمة العربية</h3>
+<p class="content" id="arText">
+مرحبًا يا ياكوب،
+آمل أن تكون بخير وأن تكون أسبوعك مريحًا. أردت أن أكتب لك بسرعة لأننا نود أن نلتقي يوم السبت. نخطط لعمل نزهة صغيرة في حديقة المدينة. كل واحد يجلب شيئًا: سأجلب الخبز والجبن والعصير. هل يمكنك إحضار الفاكهة أو البسكويت؟ موعدنا الساعة 15:00 عند النافورة الكبيرة. إذا هطل المطر، سنذهب إلى المقهى بجانب الحديقة. من فضلك أخبرني هذا المساء إذا كان الوقت مناسبًا. أنا متحمس جدًا لرؤيتك!
+أطيب التحيات
+ماكس
+</p>
+</section>
+<section class="panel ar">
+<h3 class="block-title">سبب كتابة الإيميل</h3>
+<ul class="reasons">
+<li>دعوة صديق للقاء غير رسمي (نزهة في الحديقة).</li>
+<li>تأكيد الوقت والمكان وخطة بديلة عند المطر.</li>
+<li>طلب إحضار شيء محدد (فاكهة/بسكويت).</li>
 </ul>
+</section>
 </div>
 </div>
-<!-- إيميل 2 -->
-<div class="email-card">
-<h2>إيميل 2: دعوة لصديق</h2>
-<p><span>ألماني:</span> Hallo Maria, ich hoffe, dir geht es gut. Am Samstag möchte ich dich zu meiner Geburtstagsfeier einladen. Die Feier beginnt um 17 Uhr bei mir zu Hause. Es gibt Kuchen, Getränke und Musik. Bitte sag mir Bescheid, ob du kommen kannst. Ich freue mich, dich zu sehen und einen schönen Nachmittag zu verbringen. Du kannst auch deine Freunde mitbringen, wenn du möchtest.</p>
-<p><span>ترجمة:</span> مرحبًا ماريا، أتمنى أن تكوني بخير. يوم السبت أود دعوتك لحفلة عيد ميلادي. تبدأ الحفلة الساعة 17:00 في منزلي. سيكون هناك كعك ومشروبات وموسيقى. من فضلك أخبريني إذا كنتِ تستطيعين الحضور. أنا متحمس لرؤيتك وقضاء فترة بعد ظهر جميلة معًا. يمكنك أيضًا إحضار أصدقائك إذا أحببت.</p>
-<div class="zweck">
-<p>سبب كتابة الإيميل:</p>
-<ul>
-<li>دعوة صديقة لحفل.</li>
-<li>تدريب على كتابة الدعوات بالألمانية.</li>
-<li>استخدام التحيات والختام المناسب.</li>
-<li>تطبيق جمل مهذبة ومفردات يومية.</li>
-</ul>
-</div>
-</div>
-<!-- إيميل 3 -->
-<div class="email-card">
-<h2>إيميل 3: لشركة</h2>
-<p><span>ألماني:</span> Sehr geehrte Damen und Herren, ich interessiere mich für Ihr Sprachkursangebot. Könnten Sie mir bitte weitere Informationen senden? Ich möchte wissen, welche Kurse aktuell verfügbar sind und welche Gebühren anfallen. Vielen Dank im Voraus für Ihre Antwort. Ich freue mich auf Ihre Rückmeldung und hoffe, bald an einem Kurs teilnehmen zu können.</p>
-<p><span>ترجمة:</span> السيدات والسادة الأعزاء، أنا مهتم بعروض دورات اللغة الخاصة بكم. هل يمكنكم إرسال المزيد من المعلومات لي؟ أود أن أعرف الدورات المتاحة حاليًا وما هي الرسوم. شكرًا مقدمًا على ردكم. أتطلع إلى ردكم وآمل أن أتمكن من حضور دورة قريبًا.</p>
-<div class="zweck">
-<p>سبب كتابة الإيميل:</p>
-<ul>
-<li>طلب معلومات رسمية من شركة.</li>
-<li>تدريب على الصيغ الرسمية والتحية المناسبة.</li>
-<li>تعلم كتابة استفسارات واضحة ومهذبة.</li>
-</ul>
-</div>
-</div>
-<!-- إيميل 4 -->
-<div class="email-card">
-<h2>إيميل 4: شكر لشركة</h2>
-<p><span>ألماني:</span> Sehr geehrtes Team, vielen Dank für Ihre schnelle Lieferung. Die Produkte sind in einwandfreiem Zustand angekommen und ich bin sehr zufrieden. Ihre Unterstützung und Freundlichkeit weiß ich sehr zu schätzen. Ich werde Ihr Unternehmen gerne weiterempfehlen und freue mich auf zukünftige Bestellungen.</p>
-<p><span>ترجمة:</span> الفريق المحترم، شكرًا جزيلًا على التوصيل السريع. وصلت المنتجات في حالة ممتازة وأنا راضٍ جدًا. أقدر دعمكم وودكم. سأوصي بشركتكم بسرور وأتطلع للطلبات المستقبلية.</p>
-<div class="zweck">
-<p>سبب كتابة الإيميل:</p>
-<ul>
-<li>التعبير عن الشكر لشركة بعد التوصيل.</li>
-<li>تطبيق الصيغ الرسمية والمهذبة.</li>
-<li>تدريب على كتابة إيميلات قصيرة ولطيفة.</li>
-</ul>
-</div>
-</div>
-<!-- إيميل 5 -->
-<div class="email-card">
-<h2>إيميل 5: طلب مساعدة لصديق</h2>
-<p><span>ألماني:</span> Hallo Tom, ich hoffe, es geht dir gut. Ich brauche deine Hilfe für mein Projekt in der Schule. Könntest du mir bitte die Informationen über die Geschichte von Hamburg schicken? Ich habe Schwierigkeiten, alles alleine zu finden und dein Wissen wäre sehr hilfreich. Vielen Dank im Voraus für deine Unterstützung. Ich freue mich auf deine Antwort und hoffe, dass wir uns bald treffen können.</p>
-<p><span>ترجمة:</span> مرحبًا توم، أتمنى أن تكون بخير. أحتاج مساعدتك في مشروعي المدرسي. هل يمكنك إرسال المعلومات عن تاريخ هامبورغ لي؟ أجد صعوبة في العثور على كل شيء بمفردي ومعرفتك ستكون مفيدة جدًا. شكرًا مقدمًا على دعمك. أتطلع لردك وآمل أن نلتقي قريبًا.</p>
-<div class="zweck">
-<p>سبب كتابة الإيميل:</p>
-<ul>
-<li>طلب مساعدة من صديق.</li>
-<li>تدريب على كتابة طلب بطريقة مهذبة.</li>
-<li>تعلم استخدام الجمل الطويلة والأسئلة المناسبة.</li>
-</ul>
-</div>
-</div>
+<footer>نموذج قابل للتوسّع — انسخ هذا الصندوق وعدّل النصوص لعمل المزيد من الإيميلات.</footer>
 </main>
+<script>
+ // زر النسخ
+ document.getElementById('copyDe').addEventListener('click', async () => {
+   try{
+     const text = document.getElementById('deText').innerText.trim();
+     await navigator.clipboard.writeText(text);
+     flash('تم نسخ النص الألماني ✅');
+   }catch(e){
+     flash('لم يتم النسخ — يسمح المتصفح بالنسخ من صفحات HTTPS فقط.');
+   }
+ });
+ // إظهار/إخفاء الترجمة
+ const trPanel = document.getElementById('trPanel');
+ let shown = true;
+ document.getElementById('toggleTr').addEventListener('click', () => {
+   shown = !shown;
+   trPanel.style.display = shown ? 'block' : 'none';
+ });
+ // طباعة / PDF
+ document.getElementById('printPg').addEventListener('click', () => window.print());
+ // إشعار صغير أعلى الصفحة
+ function flash(msg){
+   const n = document.createElement('div');
+   n.textContent = msg;
+   n.style.cssText = `
+     position:fixed; inset:auto 50% 24px auto; transform:translateX(50%);
+     background:linear-gradient(90deg, var(--acc1), var(--acc2));
+     color:#fff; padding:10px 14px; border-radius:999px; z-index:9999;
+     box-shadow:0 6px 20px rgba(0,0,0,.25); font-weight:700;
+   `;
+   document.body.appendChild(n);
+   setTimeout(()=>{ n.style.opacity='0'; n.style.transition='opacity .4s'; }, 1400);
+   setTimeout(()=> n.remove(), 1900);
+ }
+</script>
 </body>
 </html>
