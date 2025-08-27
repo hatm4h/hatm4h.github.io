@@ -4,84 +4,84 @@
 <meta charset="UTF-8">
 <title>موقعي التعليمي</title>
 <style>
-   body {
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     margin: 0;
-     padding: 0;
-     background: #f4f7f8;
-     color: #333;
-     text-align: center;
-   }
-   header {
-     background: #0077cc;
-     color: white;
-     padding: 40px 20px;
-     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-   }
+ body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   margin: 0;
+   padding: 0;
+   background: #eef2f7;
+   color: #333;
+   text-align: center;
+ }
+ header {
+   background: #0055aa;
+   color: white;
+   padding: 50px 20px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ }
+ header h1 {
+   font-size: 38px;
+   margin: 0 0 10px 0;
+ }
+ header p {
+   font-size: 22px;
+   margin: 0;
+ }
+ main {
+   padding: 50px 20px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 25px;
+ }
+ .section {
+   background: white;
+   border-radius: 15px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+   width: 230px;
+   padding: 35px 20px;
+   transition: transform 0.3s, box-shadow 0.3s;
+ }
+ .section:hover {
+   transform: translateY(-7px);
+   box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+ }
+ .section a {
+   text-decoration: none;
+   color: #0055aa;
+   font-weight: bold;
+   font-size: 21px;
+   display: block;
+   margin-top: 12px;
+ }
+ .section-icon {
+   font-size: 52px;
+   margin-bottom: 18px;
+   color: #0055aa;
+ }
+ /* تكبير الخط على الجوال */
+ @media (max-width: 600px) {
    header h1 {
-     font-size: 36px;
-     margin: 0 0 10px 0;
+     font-size: 44px;
    }
    header p {
-     font-size: 20px;
-     margin: 0;
-   }
-   main {
-     padding: 40px 20px;
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 20px;
+     font-size: 26px;
    }
    .section {
-     background: white;
-     border-radius: 12px;
-     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-     width: 220px;
-     padding: 30px 20px;
-     transition: transform 0.3s, box-shadow 0.3s;
-   }
-   .section:hover {
-     transform: translateY(-5px);
-     box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+     width: 90%;
+     padding: 35px;
    }
    .section a {
-     text-decoration: none;
-     color: #0077cc;
-     font-weight: bold;
-     font-size: 20px;
-     display: block;
-     margin-top: 10px;
+     font-size: 30px;
    }
    .section-icon {
-     font-size: 50px;
-     margin-bottom: 15px;
-     color: #0077cc;
+     font-size: 65px;
    }
-   /* تكبير الخط على الجوال */
-   @media (max-width: 600px) {
-     header h1 {
-       font-size: 42px;
-     }
-     header p {
-       font-size: 24px;
-     }
-     .section {
-       width: 90%;
-       padding: 30px;
-     }
-     .section a {
-       font-size: 28px;
-     }
-     .section-icon {
-       font-size: 60px;
-     }
-   }
+ }
 </style>
 </head>
 <body>
 <header>
-<h1>👋 أهلاً بك في موقعي التعليمي</h1>
+<h1>👋 مرحباً بك في موقعي التعليمي</h1>
 <p>استكشف الأقسام التعليمية وتعلم اللغة الألمانية بسهولة</p>
 </header>
 <main>
@@ -91,11 +91,11 @@
 </div>
 <div class="section">
 <div class="section-icon">✍️</div>
-<a href="examples.html">كلمات مع امثلة</a>
+<a href="words-examples.htm">كلمات مع أمثلة</a>
 </div>
 <div class="section">
 <div class="section-icon">📧</div>
- <a href="a1_emails.html">📧 إيميلات</a>
+<a href="a1_emails.html">إيميلات</a>
 </div>
 <div class="section">
 <div class="section-icon">📚</div>
