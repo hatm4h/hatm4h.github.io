@@ -509,5 +509,57 @@ a:hover {
  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
  background: linear-gradient(45deg, #00aaff, #0077cc);
 }
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تجربة النطق بالألمانية</title>
+<style>
+   table { width: 100%; border-collapse: collapse; margin: 20px auto; }
+   th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+   th { background: #0077cc; color: #fff; }
+   button { font-size: 18px; cursor: pointer; border: none; background: none; }
+   button:hover { color: #0077cc; }
+</style>
+</head>
+<body>
+<h2 style="text-align:center">🔊 تجربة النطق بالألمانية</h2>
+<table>
+<thead>
+<tr>
+<th>Deutsch</th>
+<th>العربية</th>
+<th>النطق</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Haus</td>
+<td>بيت</td>
+<td><button onclick="speak('Haus')">🔊</button></td>
+</tr>
+<tr>
+<td>Auto</td>
+<td>سيارة</td>
+<td><button onclick="speak('Auto')">🔊</button></td>
+</tr>
+<tr>
+<td>Buch</td>
+<td>كتاب</td>
+<td><button onclick="speak('Buch')">🔊</button></td>
+</tr>
+</tbody>
+</table>
+<script>
+function speak(text) {
+ const utterance = new SpeechSynthesisUtterance(text);
+ utterance.lang = 'de-DE'; // اللغة الألمانية
+ speechSynthesis.speak(utterance);
+}
+</script>
+</body>
+</html>
+   
 </body>
 </html>
