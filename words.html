@@ -539,6 +539,7 @@ a:hover {
 <td>بيت</td>
 <td><button onclick="speak('Haus')">🔊</button></td>
 </tr>
+
 <tr>
 <td>Auto</td>
 <td>سيارة</td>
@@ -560,6 +561,105 @@ function speak(text) {
 </script>
 </body>
 </html>
-   
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تجربة النطق</title>
+<style>
+   body {
+     font-family: Arial, sans-serif;
+     background: #f9f9f9;
+     padding: 20px;
+     text-align: center;
+   }
+   table {
+     width: 100%;
+     border-collapse: collapse;
+     background: #fff;
+     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+   }
+   th, td {
+     padding: 12px;
+     border: 1px solid #ddd;
+     font-size: 18px;
+   }
+   th {
+     background: #0077cc;
+     color: #fff;
+   }
+   .word {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 8px;
+   }
+   .sound-btn {
+     cursor: pointer;
+     font-size: 18px;
+     border: none;
+     background: none;
+     color: #0077cc;
+     transition: 0.3s;
+   }
+   .sound-btn:hover {
+     color: #005fa3;
+     transform: scale(1.2);
+   }
+   @media (max-width: 600px) {
+     th, td { font-size: 16px; }
+   }
+</style>
+</head>
+<body>
+<h2>📖 تجربة النطق بالألمانية</h2>
+<table>
+<thead>
+<tr>
+<th>Deutsch</th>
+<th>العربية</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<div class="word">
+         Haus
+<button class="sound-btn" onclick="speak('Haus')">🔊</button>
+</div>
+</td>
+<td>بيت</td>
+</tr>
+<tr>
+<td>
+<div class="word">
+         Auto
+<button class="sound-btn" onclick="speak('Auto')">🔊</button>
+</div>
+</td>
+<td>سيارة</td>
+</tr>
+<tr>
+<td>
+<div class="word">
+         Buch
+<button class="sound-btn" onclick="speak('Buch')">🔊</button>
+</div>
+</td>
+<td>كتاب</td>
+</tr>
+</tbody>
+</table>
+<script>
+function speak(text) {
+ const utterance = new SpeechSynthesisUtterance(text);
+ utterance.lang = 'de-DE'; // النطق بالألمانية
+ speechSynthesis.speak(utterance);
+}
+</script>
+</body>
+</html>
 </body>
 </html>
