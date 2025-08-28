@@ -3,448 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinder Wörter mit Beispielen – كلمات مع أمثلة</title>
+<title>Wörterbuch Deutsch-Arabisch – قاموس ألماني-عربي</title>
 <style>
-   body {
-     font-family: Arial, sans-serif;
-     line-height: 1.8;
-     padding: 20px;
-     background: #f9f9f9;
-     color: #333;
-   }
-   h1 {
-     text-align: center;
-     color: #0044cc;
-   }
-   .example {
-     background: #fff;
-     border: 1px solid #ddd;
-     border-radius: 8px;
-     padding: 15px;
-     margin: 20px auto;
-     max-width: 800px;
-     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-   }
-   .german {
-     background: #eef5ff;
-     padding: 10px;
-     border-radius: 5px;
-     margin-bottom: 10px;
-     white-space: pre-wrap;
-   }
-   .arabic {
-     background: #fff8e1;
-     padding: 10px;
-     border-radius: 5px;
-     direction: rtl;
-     text-align: right;
-     white-space: pre-wrap;
-   }
-   .title {
-     font-weight: bold;
-     color: #555;
-     margin-bottom: 10px;
-   }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+    padding: 20px;
+    background: #f9f9f9;
+    color: #333;
+}
+h1 {
+    text-align: center;
+    color: #0044cc;
+}
+.example {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.german {
+    background: #eef5ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+}
+.arabic {
+    background: #fff8e1;
+    padding: 10px;
+    border-radius: 5px;
+    direction: rtl;
+    text-align: right;
+    white-space: pre-wrap;
+}
+.title {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sound-btn {
+    cursor: pointer;
+    font-size: 18px;
+    background: none;
+    border: none;
+}
 </style>
 </head>
 <body>
-<h1>📚 Wörter mit Beispielen – كلمات مع أمثلة</h1>
-<!-- Beispiel 1 -->
+<h1>📚 Wörterbuch Deutsch-Arabisch مع أمثلة</h1>
+
+<!-- Kategorie: Haus & Möbel -->
 <div class="example">
-<div class="title">Haus – بيت</div>
-<div class="german">
-Ich wohne in einem großen Haus.  
-Mein Haus hat drei Schlafzimmer und einen Garten.
+<div class="title">🏠 Haus – بيت <button class="sound-btn" onclick="speak('Haus')">🔊</button></div>
+<div class="german">Ich wohne in einem großen Haus.\nMein Haus hat drei Schlafzimmer und einen Garten.</div>
+<div class="arabic">أعيش في بيت كبير.\nبيتي يحتوي على ثلاث غرف نوم وحديقة.</div>
 </div>
-<div class="arabic">
-أعيش في بيت كبير.  
-بيتي يحتوي على ثلاث غرف نوم وحديقة.
-</div>
-</div>
-<!-- Beispiel 2 -->
+
 <div class="example">
-<div class="title">Auto – سيارة</div>
-<div class="german">
-Mein Auto ist rot und sehr schnell.  
-Ich fahre jeden Tag mit meinem Auto zur Arbeit.
+<div class="title">🪑 Tisch – طاولة <button class="sound-btn" onclick="speak('Tisch')">🔊</button></div>
+<div class="german">Der Tisch im Wohnzimmer ist groß.\nWir essen oft gemeinsam am Tisch.</div>
+<div class="arabic">الطاولة في غرفة المعيشة كبيرة.\nنأكل غالبًا معًا على الطاولة.</div>
 </div>
-<div class="arabic">
-سيارتي حمراء وسريعة جدًا.  
-أقود سيارتي كل يوم إلى العمل.
-</div>
-</div>
-<!-- Beispiel 3 -->
+
 <div class="example">
-<div class="title">Buch – كتاب</div>
-<div class="german">
-Ich lese gern ein Buch am Abend.  
-Das Buch, das ich gerade lese, ist sehr spannend.
+<div class="title">💺 Stuhl – كرسي <button class="sound-btn" onclick="speak('Stuhl')">🔊</button></div>
+<div class="german">Ich habe einen neuen Stuhl im Büro.\nEr ist bequem und stabil.</div>
+<div class="arabic">لدي كرسي جديد في المكتب.\nإنه مريح وثابت.</div>
 </div>
-<div class="arabic">
-أحب قراءة كتاب في المساء.  
-الكتاب الذي أقرأه الآن مشوق جدًا.
-</div>
-</div>
-<!-- Beispiel 4 -->
+
+<!-- Kategorie: Tiere -->
 <div class="example">
-<div class="title">Freund – صديق</div>
-<div class="german">
-Mein bester Freund heißt Ali.  
-Wir spielen oft zusammen Fußball.
+<div class="title">🐶 Hund – كلب <button class="sound-btn" onclick="speak('Hund')">🔊</button></div>
+<div class="german">Mein Hund heißt Max.\nEr spielt gern im Garten.</div>
+<div class="arabic">كلبي اسمه ماكس.\nيحب اللعب في الحديقة.</div>
 </div>
-<div class="arabic">
-أفضل صديق لي اسمه علي.  
-نلعب غالبًا كرة القدم معًا.
-</div>
-<!-- Beispiel 6 -->
+
 <div class="example">
-<div class="title">Milch – حليب</div>
-<div class="german">
-Ich trinke jeden Morgen ein Glas Milch.  
-Milch ist gesund für die Knochen.
+<div class="title">🐱 Katze – قطة <button class="sound-btn" onclick="speak('Katze')">🔊</button></div>
+<div class="german">Die Katze schläft auf dem Sofa.\nSie ist sehr süß und freundlich.</div>
+<div class="arabic">القطة نائمة على الأريكة.\nإنها لطيفة جدًا وودودة.</div>
 </div>
-<div class="arabic">
-أشرب كل صباح كأسًا من الحليب.  
-الحليب مفيد للعظام.
-</div>
-</div>
-<!-- Beispiel 7 -->
+
+<!-- Kategorie: Lebensmittel & Getränke -->
 <div class="example">
-<div class="title">Apfel – تفاحة</div>
-<div class="german">
-Ich esse jeden Tag einen Apfel.  
-Äpfel sind lecker und gesund.
+<div class="title">🥛 Milch – حليب <button class="sound-btn" onclick="speak('Milch')">🔊</button></div>
+<div class="german">Ich trinke jeden Morgen ein Glas Milch.\nMilch ist gesund für die Knochen.</div>
+<div class="arabic">أشرب كل صباح كأسًا من الحليب.\nالحليب مفيد للعظام.</div>
 </div>
-<div class="arabic">
-آكل تفاحة كل يوم.  
-التفاح لذيذ وصحي.
-</div>
-</div>
-<!-- Beispiel 8 -->
+
 <div class="example">
-<div class="title">Hund – كلب</div>
-<div class="german">
-Mein Hund heißt Max.  
-Er spielt gern im Garten.
+<div class="title">🍎 Apfel – تفاحة <button class="sound-btn" onclick="speak('Apfel')">🔊</button></div>
+<div class="german">Ich esse jeden Tag einen Apfel.\nÄpfel sind lecker und gesund.</div>
+<div class="arabic">آكل تفاحة كل يوم.\nالتفاح لذيذ وصحي.</div>
 </div>
-<div class="arabic">
-كلبي اسمه ماكس.  
-يحب اللعب في الحديقة.
-</div>
-</div>
-<!-- Beispiel 9 -->
+
 <div class="example">
-<div class="title">Katze – قطة</div>
-<div class="german">
-Die Katze schläft auf dem Sofa.  
-Sie ist sehr süß und freundlich.
+<div class="title">☕ Kaffee – قهوة <button class="sound-btn" onclick="speak('Kaffee')">🔊</button></div>
+<div class="german">Ich trinke morgens gern einen Kaffee.\nKaffee gibt mir Energie.</div>
+<div class="arabic">أحب شرب القهوة في الصباح.\nالقهوة تعطيني الطاقة.</div>
 </div>
-<div class="arabic">
-القطة نائمة على الأريكة.  
-إنها لطيفة جدًا وودودة.
-</div>
-</div>
-<!-- Beispiel 10 -->
+
+<!-- Kategorie: Transport -->
 <div class="example">
-<div class="title">Tisch – طاولة</div>
-<div class="german">
-Der Tisch im Wohnzimmer ist groß.  
-Wir essen oft gemeinsam am Tisch.
+<div class="title">🚗 Auto – سيارة <button class="sound-btn" onclick="speak('Auto')">🔊</button></div>
+<div class="german">Mein Auto ist rot und sehr schnell.\nIch fahre jeden Tag mit meinem Auto zur Arbeit.</div>
+<div class="arabic">سيارتي حمراء وسريعة جدًا.\nأقود سيارتي كل يوم إلى العمل.</div>
 </div>
-<div class="arabic">
-الطاولة في غرفة المعيشة كبيرة.  
-نأكل غالبًا معًا على الطاولة.
+
+<div class="example">
+<div class="title">✈️ Flugzeug – طائرة <button class="sound-btn" onclick="speak('Flugzeug')">🔊</button></div>
+<div class="german">Wir fliegen im Sommer nach Spanien.\nDas Flugzeug startet um 10 Uhr.</div>
+<div class="arabic">سنذهب بالطائرة إلى إسبانيا في الصيف.\nتقلع الطائرة الساعة 10 صباحًا.</div>
 </div>
+
+<div class="example">
+<div class="title">🚌 Bus – باص <button class="sound-btn" onclick="speak('Bus')">🔊</button></div>
+<div class="german">Ich nehme jeden Morgen den Bus zur Schule.\nDer Bus ist meistens pünktlich.</div>
+<div class="arabic">أستقل الحافلة كل صباح إلى المدرسة.\nالحافلة غالبًا ما تكون في الوقت المحدد.</div>
 </div>
 <!-- Beispiel 11 -->
 <div class="example">
-<div class="title">Stuhl – كرسي</div>
+<div class="title">Feuerwehrmann – رجل إطفاء</div>
 <div class="german">
-Ich habe einen neuen Stuhl im Büro.  
-Er ist bequem und stabil.
+Der Feuerwehrmann löscht Brände und rettet Menschen.  
+Er arbeitet mutig und schnell.
 </div>
 <div class="arabic">
-لدي كرسي جديد في المكتب.  
-إنه مريح وثابت.
+رجل الإطفاء يطفئ الحرائق وينقذ الناس.  
+يعمل بشجاعة وسرعة.
 </div>
 </div>
+
 <!-- Beispiel 12 -->
 <div class="example">
-<div class="title">Fenster – نافذة</div>
+<div class="title">Krankenschwester – ممرضة</div>
 <div class="german">
-Die Fenster sind sauber geputzt.  
-Ich öffne sie jeden Morgen, um frische Luft hereinzulassen.
+Die Krankenschwester pflegt die Patienten im Krankenhaus.  
+Sie gibt Medikamente und tröstet die Menschen.
 </div>
 <div class="arabic">
-النوافذ نظيفة.  
-أفتحها كل صباح لإدخال الهواء النقي.
+الممرضة تعتني بالمرضى في المستشفى.  
+تعطي الأدوية وتواسي الناس.
 </div>
 </div>
+
 <!-- Beispiel 13 -->
 <div class="example">
-<div class="title">Tür – باب</div>
+<div class="title">Zoo – حديقة الحيوان</div>
 <div class="german">
-Bitte schließe die Tür, es zieht.  
-Die Tür ist neu gestrichen.
+Wir besuchen am Wochenende den Zoo.  
+Im Zoo gibt es viele exotische Tiere.
 </div>
 <div class="arabic">
-من فضلك أغلق الباب، هناك تيار هواء.  
-الباب مُطلى حديثًا.
+نزور حديقة الحيوان في عطلة نهاية الأسبوع.  
+في حديقة الحيوان هناك العديد من الحيوانات الغريبة.
 </div>
 </div>
+
 <!-- Beispiel 14 -->
 <div class="example">
-<div class="title">Stadt – مدينة</div>
+<div class="title">Brot – خبز</div>
 <div class="german">
-Meine Stadt ist sehr groß und lebendig.  
-Es gibt viele Geschäfte und Cafés.
+Ich kaufe frisches Brot jeden Morgen.  
+Das Brot schmeckt warm am besten.
 </div>
 <div class="arabic">
-مدينتي كبيرة جدًا وحيوية.  
-هناك العديد من المتاجر والمقاهي.
+أشتري خبزًا طازجًا كل صباح.  
+الخبز يكون ألذ وهو دافئ.
 </div>
 </div>
+
 <!-- Beispiel 15 -->
-<div class="example">
-<div class="title">Dorf – قرية</div>
-<div class="german">
-Ich verbringe meine Ferien oft in einem kleinen Dorf.  
-Die Dorfbewohner sind sehr freundlich.
-</div>
-<div class="arabic">
-أقضي عطلتي غالبًا في قرية صغيرة.  
-سكان القرية ودودون جدًا.
-</div>
-</div>
-<!-- Beispiel 16 -->
-<div class="example">
-<div class="title">Zug – قطار</div>
-<div class="german">
-Ich fahre jeden Morgen mit dem Zug zur Arbeit.  
-Der Zug ist pünktlich und bequem.
-</div>
-<div class="arabic">
-أذهب كل صباح إلى العمل بالقطار.  
-القطار دقيق ومريح.
-</div>
-</div>
-<!-- Beispiel 17 -->
-<div class="example">
-<div class="title">Flugzeug – طائرة</div>
-<div class="german">
-Wir fliegen im Sommer nach Spanien.  
-Das Flugzeug startet um 10 Uhr.
-</div>
-<div class="arabic">
-سنذهب بالطائرة إلى إسبانيا في الصيف.  
-تقلع الطائرة الساعة 10 صباحًا.
-</div>
-</div>
-<!-- Beispiel 18 -->
-<div class="example">
-<div class="title">Bus – باص</div>
-<div class="german">
-Ich nehme jeden Morgen den Bus zur Schule.  
-Der Bus ist meistens pünktlich.
-</div>
-<div class="arabic">
-أستقل الحافلة كل صباح إلى المدرسة.  
-الحافلة غالبًا ما تكون في الوقت المحدد.
-</div>
-</div>
-<!-- Beispiel 19 -->
-<div class="example">
-<div class="title">Arzt – طبيب</div>
-<div class="german">
-Ich habe morgen einen Termin beim Arzt.  
-Der Arzt untersucht mich gründlich.
-</div>
-<div class="arabic">
-لدي موعد غدًا عند الطبيب.  
-يفحصني الطبيب بعناية.
-</div>
-</div>
-<!-- Beispiel 20 -->
-<div class="example">
-<div class="title">Lehrer – معلم</div>
-<div class="german">
-Mein Lehrer erklärt den Stoff sehr gut.  
-Ich lerne viel im Unterricht.
-</div>
-<div class="arabic">
-معلمي يشرح الدرس بشكل جيد جدًا.  
-أتعلم الكثير في الصف.
-</div>
-</div>
-<!-- Beispiel 1 -->
-<div class="example">
-<div class="title">Garten – حديقة</div>
-<div class="german">
-Im Garten wachsen viele Blumen und Gemüse.  
-Ich verbringe die Nachmittage gern im Garten.
-</div>
-<div class="arabic">
-في الحديقة تنمو العديد من الزهور والخضروات.  
-أقضي بعد الظهر في الحديقة بكل سرور.
-</div>
-</div>
-<!-- Beispiel 2 -->
-<div class="example">
-<div class="title">Bäckerei – مخبز</div>
-<div class="german">
-Ich gehe jeden Morgen zur Bäckerei, um frisches Brot zu kaufen.  
-Die Bäckerei ist nur fünf Minuten von meinem Haus entfernt.
-</div>
-<div class="arabic">
-أذهب كل صباح إلى المخبز لشراء خبز طازج.  
-المخبز يبعد خمس دقائق فقط عن بيتي.
-</div>
-</div>
-<!-- Beispiel 3 -->
-<div class="example">
-<div class="title">Kino – سينما</div>
-<div class="german">
-Am Wochenende gehe ich oft ins Kino.  
-Der neue Film ist sehr spannend.
-</div>
-<div class="arabic">
-في عطلة نهاية الأسبوع أذهب غالبًا إلى السينما.  
-الفيلم الجديد مشوق جدًا.
-</div>
-</div>
-<!-- Beispiel 4 -->
-<div class="example">
-<div class="title">Supermarkt – سوبرماركت</div>
-<div class="german">
-Ich kaufe Obst und Gemüse im Supermarkt.  
-Der Supermarkt ist jeden Tag geöffnet.
-</div>
-<div class="arabic">
-أشتري الفواكه والخضروات من السوبرماركت.  
-السوبرماركت مفتوح كل يوم.
-</div>
-</div>
-<!-- Beispiel 5 -->
-<div class="example">
-<div class="title">Bibliothek – مكتبة</div>
-<div class="german">
-In der Bibliothek kann man viele Bücher lesen.  
-Ich leihe dort oft Romane aus.
-</div>
-<div class="arabic">
-في المكتبة يمكن قراءة العديد من الكتب.  
-أستعير هناك غالبًا الروايات.
-</div>
-</div>
-<!-- Beispiel 6 -->
-<div class="example">
-<div class="title">Straße – شارع</div>
-<div class="german">
-Die Straße vor meinem Haus ist sehr ruhig.  
-Am Abend spazieren viele Leute auf der Straße.
-</div>
-<div class="arabic">
-الشارع أمام بيتي هادئ جدًا.  
-في المساء يتجول العديد من الناس في الشارع.
-</div>
-</div>
-<!-- Beispiel 7 -->
-<div class="example">
-<div class="title">Bahnhof – محطة القطار</div>
-<div class="german">
-Ich gehe zum Bahnhof, um meinen Zug zu nehmen.  
-Der Bahnhof ist immer sehr voll.
-</div>
-<div class="arabic">
-أذهب إلى محطة القطار لأستقل قطاري.  
-المحطة دائمًا مزدحمة جدًا.
-</div>
-</div>
-<!-- Beispiel 8 -->
-<div class="example">
-<div class="title">Restaurant – مطعم</div>
-<div class="german">
-Wir essen gern im Restaurant zu Abend.  
-Das Restaurant serviert leckere Speisen.
-</div>
-<div class="arabic">
-نحب تناول العشاء في المطعم.  
-يقدم المطعم أطعمة لذيذة.
-</div>
-</div>
-<!-- Beispiel 9 -->
-<div class="example">
-<div class="title">Apotheke – صيدلية</div>
-<div class="german">
-In der Apotheke kaufe ich Medikamente.  
-Die Apotheke hat auch gesunde Lebensmittel.
-</div>
-<div class="arabic">
-أشتري الأدوية من الصيدلية.  
-الصيدلية لديها أيضًا أطعمة صحية.
-</div>
-</div>
-<!-- Beispiel 10 -->
-<div class="example">
-<div class="title">Markt – سوق</div>
-<div class="german">
-Am Markt gibt es frisches Obst und Gemüse.  
-Ich gehe samstags immer auf den Markt.
-</div>
-<div class="arabic">
-في السوق هناك فواكه وخضروات طازجة.  
-أذهب دائمًا إلى السوق يوم السبت.
-</div>
-</div>
-<!-- Beispiel 11 -->
-<div class="example">
-<div class="title">Schwimmbad – مسبح</div>
-<div class="german">
-Im Sommer gehe ich oft ins Schwimmbad.  
-Das Schwimmbad ist groß und sauber.
-</div>
-<div class="arabic">
-في الصيف أذهب غالبًا إلى المسبح.  
-المسبح كبير ونظيف.
-</div>
-</div>
-<!-- Beispiel 12 -->
-<div class="example">
-<div class="title">Park – حديقة عامة</div>
-<div class="german">
-Im Park jogge ich jeden Morgen.  
-Viele Kinder spielen im Park Fußball.
-</div>
-<div class="arabic">
-في الحديقة أمارس الجري كل صباح.  
-العديد من الأطفال يلعبون كرة القدم في الحديقة.
-</div>
-</div>
-<!-- Beispiel 13 -->
-<div class="example">
-<div class="title">Post – مكتب البريد</div>
-<div class="german">
-Ich gehe zur Post, um ein Paket abzuholen.  
-Die Post ist immer gut organisiert.
-</div>
-<div class="arabic">
-أذهب إلى مكتب البريد لاستلام طرد.  
-مكتب البريد منظم دائمًا جيدًا.
-</div>
-</div>
-<!-- Beispiel 14 -->
 <div class="example">
 <div class="title">Kaffee – قهوة</div>
 <div class="german">
-Ich trinke morgens gern Kaffee.  
-Kaffee hilft mir, wach zu bleiben.
+Ich trinke morgens gern eine Tasse Kaffee.  
+Kaffee gibt mir Energie für den Tag.
 </div>
 <div class="arabic">
-أحب شرب القهوة في الصباح.  
-القهوة تساعدني على البقاء مستيقظًا.
+أحب شرب فنجان قهوة في الصباح.  
+القهوة تمنحني الطاقة طوال اليوم.
 </div>
 </div>
-<!-- Beispiel 15 -->
+<!-- Beispiel 16 -->
 <div class="example">
 <div class="title">Tee – شاي</div>
 <div class="german">
@@ -456,7 +204,8 @@ Tee entspannt mich nach einem langen Tag.
 الشاي يريحني بعد يوم طويل.
 </div>
 </div>
-<!-- Beispiel 16 -->
+
+<!-- Beispiel 17 -->
 <div class="example">
 <div class="title">Berg – جبل</div>
 <div class="german">
@@ -468,7 +217,8 @@ Der Berg ist hoch und beeindruckend.
 الجبل عالٍ ومثير للإعجاب.
 </div>
 </div>
-<!-- Beispiel 17 -->
+
+<!-- Beispiel 18 -->
 <div class="example">
 <div class="title">See – بحيرة</div>
 <div class="german">
@@ -480,7 +230,8 @@ Der See ist sauber und ruhig.
 البحيرة نظيفة وهادئة.
 </div>
 </div>
-<!-- Beispiel 18 -->
+
+<!-- Beispiel 19 -->
 <div class="example">
 <div class="title">Fluss – نهر</div>
 <div class="german">
@@ -492,7 +243,8 @@ Der Fluss fließt schnell.
 النهر يجري بسرعة.
 </div>
 </div>
-<!-- Beispiel 19 -->
+
+<!-- Beispiel 20 -->
 <div class="example">
 <div class="title">Brücke – جسر</div>
 <div class="german">
@@ -504,7 +256,8 @@ Auf der Brücke ist viel Verkehr.
 هناك حركة مرور كثيرة على الجسر.
 </div>
 </div>
-<!-- Beispiel 20 -->
+
+<!-- Beispiel 21 -->
 <div class="example">
 <div class="title">Straßenbahn – ترام</div>
 <div class="german">
@@ -516,7 +269,8 @@ Die Straßenbahn ist oft pünktlich.
 الترام غالبًا ما يكون دقيقًا.
 </div>
 </div>
-<!-- Beispiel 21 -->
+
+<!-- Beispiel 22 -->
 <div class="example">
 <div class="title">Museum – متحف</div>
 <div class="german">
@@ -528,7 +282,8 @@ Ich besuche gern neue Ausstellungen.
 أحب زيارة المعارض الجديدة.
 </div>
 </div>
-<!-- Beispiel 22 -->
+
+<!-- Beispiel 23 -->
 <div class="example">
 <div class="title">Theater – مسرح</div>
 <div class="german">
@@ -540,7 +295,8 @@ Das Theaterstück war sehr spannend.
 كانت المسرحية مشوقة جدًا.
 </div>
 </div>
-<!-- Beispiel 23 -->
+
+<!-- Beispiel 24 -->
 <div class="example">
 <div class="title">Kino – سينما</div>
 <div class="german">
@@ -552,7 +308,8 @@ Das Kino ist groß und modern.
 السينما كبيرة وعصرية.
 </div>
 </div>
-<!-- Beispiel 24 -->
+
+<!-- Beispiel 25 -->
 <div class="example">
 <div class="title">Fitnessstudio – نادي رياضي</div>
 <div class="german">
@@ -564,7 +321,8 @@ Das Fitnessstudio hat viele Geräte.
 النادي يحتوي على العديد من الأجهزة.
 </div>
 </div>
-<!-- Beispiel 25 -->
+
+<!-- Beispiel 26 -->
 <div class="example">
 <div class="title">Bibliothek – مكتبة</div>
 <div class="german">
@@ -576,9 +334,10 @@ Ich lerne dort oft für die Schule.
 أدرس هناك غالبًا للمدرسة.
 </div>
 </div>
-<!-- Beispiel 26 -->
-<div class="title">Küche – مطبخ</div>
+
+<!-- Beispiel 27 -->
 <div class="example">
+<div class="title">Küche – مطبخ</div>
 <div class="german">
 In der Küche koche ich jeden Abend das Abendessen.  
 Die Küche ist sauber und modern.
@@ -588,7 +347,8 @@ Die Küche ist sauber und modern.
 المطبخ نظيف وعصري.
 </div>
 </div>
-<!-- Beispiel 27 -->
+
+<!-- Beispiel 28 -->
 <div class="example">
 <div class="title">Bett – سرير</div>
 <div class="german">
@@ -600,7 +360,8 @@ Mein Bett ist sehr bequem.
 سريري مريح جدًا.
 </div>
 </div>
-<!-- Beispiel 28 -->
+
+<!-- Beispiel 29 -->
 <div class="example">
 <div class="title">Zimmer – غرفة</div>
 <div class="german">
@@ -612,6 +373,7 @@ Ich lerne und schlafe in meinem Zimmer.
 أدرس وأنام في غرفتي.
 </div>
 </div>
+
 <!-- Beispiel 29 -->
 <div class="example">
 <div class="title">Schule – مدرسة</div>
@@ -624,6 +386,7 @@ Wir haben viele Fächer jeden Tag.
 لدينا العديد من المواد كل يوم.
 </div>
 </div>
+
 <!-- Beispiel 30 -->
 <div class="example">
 <div class="title">Universität – جامعة</div>
@@ -636,7 +399,8 @@ Die Universität hat viele Bibliotheken.
 الجامعة تحتوي على العديد من المكتبات.
 </div>
 </div>
-<!-- Beispiel 101 -->
+
+<!-- Beispiel 31 -->
 <div class="example">
 <div class="title">Zug – قطار</div>
 <div class="german">
@@ -648,7 +412,8 @@ Der Zug ist meistens pünktlich.
 القطار غالبًا ما يكون دقيقًا.
 </div>
 </div>
-<!-- Beispiel 102 -->
+
+<!-- Beispiel 32 -->
 <div class="example">
 <div class="title">Fahrrad – دراجة</div>
 <div class="german">
@@ -660,7 +425,8 @@ Das Fahrrad ist sehr leicht zu steuern.
 الدراجة سهلة التحكم جدًا.
 </div>
 </div>
-<!-- Beispiel 103 -->
+
+<!-- Beispiel 33 -->
 <div class="example">
 <div class="title">Einkauf – تسوق</div>
 <div class="german">
@@ -672,7 +438,8 @@ Beim Einkauf kaufe ich Obst, Gemüse und Brot.
 أشتري الفواكه والخضروات والخبز عند التسوق.
 </div>
 </div>
-<!-- Beispiel 104 -->
+
+<!-- Beispiel 34 -->
 <div class="example">
 <div class="title">Regen – مطر</div>
 <div class="german">
@@ -684,7 +451,8 @@ Ich nehme meinen Regenschirm mit.
 آخذ معي مظلتي.
 </div>
 </div>
-<!-- Beispiel 105 -->
+
+<!-- Beispiel 35 -->
 <div class="example">
 <div class="title">Sonne – شمس</div>
 <div class="german">
@@ -696,7 +464,8 @@ Ich setze mich gern in die Sonne.
 أحب الجلوس تحت الشمس.
 </div>
 </div>
-<!-- Beispiel 106 -->
+
+<!-- Beispiel 36 -->
 <div class="example">
 <div class="title">Computer – كمبيوتر</div>
 <div class="german">
@@ -708,7 +477,8 @@ Mit dem Computer kann ich viele Aufgaben erledigen.
 يمكنني إنجاز العديد من المهام باستخدام الكمبيوتر.
 </div>
 </div>
-<!-- Beispiel 107 -->
+
+<!-- Beispiel 37 -->
 <div class="example">
 <div class="title">Telefon – هاتف</div>
 <div class="german">
@@ -720,7 +490,8 @@ Das Telefon klingelt oft den ganzen Tag.
 الهاتف يرن كثيرًا طوال اليوم.
 </div>
 </div>
-<!-- Beispiel 108 -->
+
+<!-- Beispiel 38 -->
 <div class="example">
 <div class="title">Brief – رسالة</div>
 <div class="german">
@@ -732,7 +503,8 @@ Der Brief enthält viele schöne Worte.
 تحتوي الرسالة على كلمات جميلة كثيرة.
 </div>
 </div>
-<!-- Beispiel 109 -->
+
+<!-- Beispiel 39 -->
 <div class="example">
 <div class="title">Kamera – كاميرا</div>
 <div class="german">
@@ -744,7 +516,8 @@ Die Kamera ist leicht und handlich.
 الكاميرا خفيفة وسهلة الاستخدام.
 </div>
 </div>
-<!-- Beispiel 110 -->
+
+<!-- Beispiel 40 -->
 <div class="example">
 <div class="title">Hemd – قميص</div>
 <div class="german">
@@ -756,7 +529,8 @@ Das Hemd ist blau und sehr bequem.
 القميص أزرق ومريح جدًا.
 </div>
 </div>
-<!-- Beispiel 111 -->
+
+<!-- Beispiel 41 -->
 <div class="example">
 <div class="title">Schokolade – شوكولاتة</div>
 <div class="german">
@@ -768,7 +542,8 @@ Schokolade macht mich glücklich.
 الشوكولاتة تجعلني سعيدًا.
 </div>
 </div>
-<!-- Beispiel 112 -->
+
+<!-- Beispiel 42 -->
 <div class="example">
 <div class="title">Frühstück – فطور</div>
 <div class="german">
@@ -780,7 +555,8 @@ Ich trinke dazu eine Tasse Kaffee.
 أشرب معه فنجان قهوة.
 </div>
 </div>
-<!-- Beispiel 113 -->
+
+<!-- Beispiel 43 -->
 <div class="example">
 <div class="title">Abendessen – عشاء</div>
 <div class="german">
@@ -804,6 +580,7 @@ Er liebt es, mit dem Ball zu spielen.
 يحب اللعب بالكرة.
 </div>
 </div>
+
 <!-- Beispiel 115 -->
 <div class="example">
 <div class="title">Katze – قطة</div>
@@ -816,6 +593,7 @@ Sie frisst gern Milch.
 تحب شرب الحليب.
 </div>
 </div>
+
 <!-- Beispiel 116 -->
 <div class="example">
 <div class="title">Arzt – طبيب</div>
@@ -828,6 +606,7 @@ Der Arzt untersucht mich gründlich.
 يفحصني الطبيب بعناية.
 </div>
 </div>
+
 <!-- Beispiel 117 -->
 <div class="example">
 <div class="title">Krankenhaus – مستشفى</div>
@@ -840,6 +619,7 @@ Das Krankenhaus ist modern und sauber.
 المستشفى حديث ونظيف.
 </div>
 </div>
+
 <!-- Beispiel 118 -->
 <div class="example">
 <div class="title">Buch – كتاب</div>
@@ -852,6 +632,7 @@ Das Buch ist spannend und lehrreich.
 الكتاب مشوق وتعليمي.
 </div>
 </div>
+
 <!-- Beispiel 119 -->
 <div class="example">
 <div class="title">Lehrer – معلم</div>
@@ -864,6 +645,7 @@ Ich verstehe die Themen leichter.
 أفهم المواضيع بشكل أسهل.
 </div>
 </div>
+
 <!-- Beispiel 120 -->
 <div class="example">
 <div class="title">Schüler – طالب</div>
@@ -876,7 +658,8 @@ Im Unterricht lernen die Schüler neue Wörter.
 يتعلم الطلاب كلمات جديدة في الصف.
 </div>
 </div>
-<!-- Beispiel 1 -->
+
+<!-- Beispiel 121 -->
 <div class="example">
 <div class="title">Bäckerei – مخبز</div>
 <div class="german">
@@ -888,7 +671,8 @@ Dort kaufe ich frisches Brot und Brötchen.
 أشتري هناك خبزًا طازجًا وكرواسان.
 </div>
 </div>
-<!-- Beispiel 2 -->
+
+<!-- Beispiel 122 -->
 <div class="example">
 <div class="title">Apotheke – صيدلية</div>
 <div class="german">
@@ -900,7 +684,8 @@ Die Apothekerin erklärt mir genau die Dosierung.
 تشرح لي الصيدلانية الجرعة بدقة.
 </div>
 </div>
-<!-- Beispiel 3 -->
+
+<!-- Beispiel 123 -->
 <div class="example">
 <div class="title">Park – حديقة</div>
 <div class="german">
@@ -912,7 +697,8 @@ Die Kinder spielen fröhlich auf dem Spielplatz.
 يلعب الأطفال بسعادة في ملعب الحديقة.
 </div>
 </div>
-<!-- Beispiel 4 -->
+
+<!-- Beispiel 124 -->
 <div class="example">
 <div class="title">Restaurant – مطعم</div>
 <div class="german">
@@ -924,7 +710,8 @@ Der Kellner empfiehlt uns eine Pizza Margherita.
 يُوصينا النادل ببيتزا مارغريتا.
 </div>
 </div>
-<!-- Beispiel 5 -->
+
+<!-- Beispiel 125 -->
 <div class="example">
 <div class="title">Bibliothek – مكتبة</div>
 <div class="german">
@@ -936,19 +723,8 @@ Die Bibliothek ist ruhig und gut ausgestattet.
 المكتبة هادئة ومجهزة تجهيزًا جيدًا.
 </div>
 </div>
-<!-- Beispiel 6 -->
-<div class="example">
-<div class="title">Krankenhaus – مستشفى</div>
-<div class="german">
-Im Krankenhaus arbeiten viele Ärzte und Krankenschwestern.  
-Das Krankenhaus ist modern und sauber.
-</div>
-<div class="arabic">
-يعمل العديد من الأطباء والممرضين في المستشفى.  
-المستشفى حديث ونظيف.
-</div>
-</div>
-<!-- Beispiel 7 -->
+
+<!-- Beispiel 126 -->
 <div class="example">
 <div class="title">Flughafen – مطار</div>
 <div class="german">
@@ -960,7 +736,8 @@ Die Sicherheitskontrolle dauert oft etwas länger.
 تستغرق إجراءات الأمن غالبًا بعض الوقت.
 </div>
 </div>
-<!-- Beispiel 8 -->
+
+<!-- Beispiel 127 -->
 <div class="example">
 <div class="title">Hotel – فندق</div>
 <div class="german">
@@ -972,7 +749,8 @@ Das Hotel hat einen großen Pool und ein Restaurant.
 يحتوي الفندق على مسبح كبير ومطعم.
 </div>
 </div>
-<!-- Beispiel 9 -->
+
+<!-- Beispiel 128 -->
 <div class="example">
 <div class="title">Supermarkt – سوبرماركت</div>
 <div class="german">
@@ -984,7 +762,8 @@ Manchmal gibt es Rabattaktionen auf frische Produkte.
 أحيانًا توجد عروض خاصة على المنتجات الطازجة.
 </div>
 </div>
-<!-- Beispiel 10 -->
+
+<!-- Beispiel 129 -->
 <div class="example">
 <div class="title">Auto – سيارة</div>
 <div class="german">
@@ -996,7 +775,8 @@ Ich fahre jeden Tag damit zur Arbeit.
 أستقلها كل يوم للذهاب إلى العمل.
 </div>
 </div>
-<!-- Beispiel 11 -->
+
+<!-- Beispiel 130 -->
 <div class="example">
 <div class="title">Bus – باص</div>
 <div class="german">
@@ -1008,6 +788,10 @@ Der Bus ist morgens oft sehr voll.
 الحافلة تكون غالبًا مزدحمة في الصباح.
 </div>
 </div>
+
+
+
+
 <!-- Beispiel 12 -->
 <div class="example">
 <div class="title">Zug – قطار</div>
@@ -1876,4 +1660,5 @@ Meine Schule hat viele freundliche Lehrer.
 </body>
 
 </html>
+
 
