@@ -449,37 +449,7 @@ function speak(text) {
  const utterance = new SpeechSynthesisUtterance(text);
  utterance.lang = 'de-DE'; // النطق بالألمانية
  speechSynthesis.speak(utterance);
-}
- <!-- زر الخروج إلى القائمة الرئيسية -->
-<a href="index.html" class="main-menu-btn" title="العودة إلى القائمة الرئيسية">
-<span class="icon">&#x2302;</span> <!-- أيقونة منزل/الرئيسية -->
- القائمة الرئيسية
-</a>
-<!-- CSS للزر -->
-<style>
-.main-menu-btn {
-   display: inline-flex;
-   align-items: center;
-   gap: 8px;
-   padding: 10px 16px;
-   background: linear-gradient(135deg, #4CAF50, #45A049);
-   color: white;
-   font-size: 16px;
-   font-weight: bold;
-   text-decoration: none;
-   border-radius: 8px;
-   box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-   transition: transform 0.2s, box-shadow 0.2s;
-}
-.main-menu-btn .icon {
-   font-size: 20px;
-}
-.main-menu-btn:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 6px 10px rgba(0,0,0,0.3);
-   background: linear-gradient(135deg, #45A049, #4CAF50);
-}
-</style>  
+}  
 </script>
 </body>
 </html>
