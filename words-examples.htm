@@ -74,7 +74,6 @@ h1 {
 <div class="arabic">أعيش في بيت كبير.  
  بيتي يحتوي على ثلاث غرف نوم وحديقة.</div>
 </div>
-<script>
 <!-- Beispiel: Schule -->
 <div class="example">
 <div class="title">🏫 Schule – مدرسة <button class="sound-btn" onclick="speak('Schule')">🔊</button></div>
@@ -125,9 +124,16 @@ h1 {
 <div class="arabic">اليوم الطقس جميل ومشمس.  
  غدًا من المتوقع أن تمطر.</div>
 </div>
-   
-
-
+<script>
+// Text-to-Speech Funktion
+function speak(text) {
+   const utterance = new SpeechSynthesisUtterance(text);
+   utterance.lang = "de-DE"; // Deutsch
+   speechSynthesis.speak(utterance);
+}
+</script>
+</body>
+</html>
 
 <div style="margin: 40px 0; text-align: center;">
 <a href="index.html" class="back-button">🔙 العودة إلى القائمة الرئيسية</a>
@@ -156,6 +162,7 @@ h1 {
 </body>
 
 </html>
+
 
 
 
