@@ -444,6 +444,36 @@
 <!-- ... ة ... -->
 </tbody>
 </table>
+<!-- زر العودة إلى القائمة الرئيسية -->
+<a href="index.html" class="home-btn" title="القائمة الرئيسية">
+ 🏠 الرئيسية
+</a>
+<!-- CSS للزر الاحترافي -->
+<style>
+.home-btn {
+   position: fixed; /* يثبت الزر في الشاشة */
+   top: 20px;       /* المسافة من الأعلى */
+   right: 20px;     /* المسافة من اليمين */
+   display: inline-flex;
+   align-items: center;
+   gap: 8px;
+   padding: 12px 20px;
+   background: linear-gradient(135deg, #4CAF50, #45A049);
+   color: white;
+   font-size: 16px;
+   font-weight: bold;
+   text-decoration: none;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+   transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+   z-index: 1000;
+}
+.home-btn:hover {
+   transform: translateY(-2px);
+   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+   background: linear-gradient(135deg, #45A049, #4CAF50);
+}
+</style>
 <script>
 function speak(text) {
  const utterance = new SpeechSynthesisUtterance(text);
