@@ -75,15 +75,57 @@ h1 {
  بيتي يحتوي على ثلاث غرف نوم وحديقة.</div>
 </div>
 <script>
-// Text-to-Speech Funktion
-function speak(text) {
-   const utterance = new SpeechSynthesisUtterance(text);
-   utterance.lang = "de-DE"; // Deutsch
-   speechSynthesis.speak(utterance);
-}
-</script>
-</body>
-</html>
+<!-- Beispiel: Schule -->
+<div class="example">
+<div class="title">🏫 Schule – مدرسة <button class="sound-btn" onclick="speak('Schule')">🔊</button></div>
+<div class="german">
+<div class="german-line">Die Kinder gehen jeden Morgen in die Schule. <button class="sound-btn" onclick="speak('Die Kinder gehen jeden Morgen in die Schule.')">🔊</button></div>
+<div class="german-line">In der Schule lernen sie viele neue Dinge. <button class="sound-btn" onclick="speak('In der Schule lernen sie viele neue Dinge.')">🔊</button></div>
+</div>
+<div class="arabic">يذهب الأطفال كل صباح إلى المدرسة.  
+ في المدرسة يتعلمون أشياء جديدة كثيرة.</div>
+</div>
+<!-- Beispiel: Lehrer -->
+<div class="example">
+<div class="title">👨‍🏫 Lehrer – معلم <button class="sound-btn" onclick="speak('Lehrer')">🔊</button></div>
+<div class="german">
+<div class="german-line">Der Lehrer erklärt den Schülern die Lektion. <button class="sound-btn" onclick="speak('Der Lehrer erklärt den Schülern die Lektion.')">🔊</button></div>
+<div class="german-line">Er beantwortet geduldig alle Fragen. <button class="sound-btn" onclick="speak('Er beantwortet geduldig alle Fragen.')">🔊</button></div>
+</div>
+<div class="arabic">المعلم يشرح الدرس للتلاميذ.  
+ يجيب بصبر على جميع الأسئلة.</div>
+</div>
+<!-- Beispiel: Bibliothek -->
+<div class="example">
+<div class="title">📖 Bibliothek – مكتبة <button class="sound-btn" onclick="speak('Bibliothek')">🔊</button></div>
+<div class="german">
+<div class="german-line">Ich gehe oft in die Bibliothek, um Bücher zu lesen. <button class="sound-btn" onclick="speak('Ich gehe oft in die Bibliothek, um Bücher zu lesen.')">🔊</button></div>
+<div class="german-line">Die Bibliothek ist ruhig und groß. <button class="sound-btn" onclick="speak('Die Bibliothek ist ruhig und groß.')">🔊</button></div>
+</div>
+<div class="arabic">أذهب كثيرًا إلى المكتبة لقراءة الكتب.  
+ المكتبة هادئة وكبيرة.</div>
+</div>
+<!-- Beispiel: Freund -->
+<div class="example">
+<div class="title">👫 Freund – صديق <button class="sound-btn" onclick="speak('Freund')">🔊</button></div>
+<div class="german">
+<div class="german-line">Mein bester Freund heißt Ali. <button class="sound-btn" onclick="speak('Mein bester Freund heißt Ali.')">🔊</button></div>
+<div class="german-line">Wir spielen oft Fußball zusammen. <button class="sound-btn" onclick="speak('Wir spielen oft Fußball zusammen.')">🔊</button></div>
+</div>
+<div class="arabic">أفضل صديق لي اسمه علي.  
+ نحن نلعب كرة القدم معًا كثيرًا.</div>
+</div>
+<!-- Beispiel: Wetter -->
+<div class="example">
+<div class="title">☀️ Wetter – طقس <button class="sound-btn" onclick="speak('Wetter')">🔊</button></div>
+<div class="german">
+<div class="german-line">Heute ist das Wetter schön und sonnig. <button class="sound-btn" onclick="speak('Heute ist das Wetter schön und sonnig.')">🔊</button></div>
+<div class="german-line">Morgen soll es regnen. <button class="sound-btn" onclick="speak('Morgen soll es regnen.')">🔊</button></div>
+</div>
+<div class="arabic">اليوم الطقس جميل ومشمس.  
+ غدًا من المتوقع أن تمطر.</div>
+</div>
+   
 
 
 
@@ -114,6 +156,7 @@ function speak(text) {
 </body>
 
 </html>
+
 
 
 
