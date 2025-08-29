@@ -216,11 +216,10 @@ function checkSection(section, totalQuestions) {
 }
 </script>
 </div>
-
 <div class="section" id="games-section">
 <h2>الألعاب التعليمية (Games / Challenges)</h2>
 
-<!-- لعبة 1: مطابقة الكلمات -->
+<!-- 1: مطابقة الكلمات الألمانية مع ترجمتها -->
 <div class="quiz-card">
 <h3>لعبة 1: مطابقة الكلمات الألمانية مع ترجمتها</h3>
 <p>اسحب كل كلمة ألمانية إلى الترجمة الصحيحة:</p>
@@ -229,18 +228,16 @@ function checkSection(section, totalQuestions) {
 <li draggable="true" data-answer="Danke">Danke</li>
 <li draggable="true" data-answer="Tschüss">Tschüss</li>
 </ul>
-
 <ul id="match-answers" style="list-style:none; padding:0;">
-<li id="ans1">شكراً</li>
-<li id="ans2">مرحبا</li>
-<li id="ans3">وداعاً</li>
+<li>شكراً</li>
+<li>مرحبا</li>
+<li>وداعاً</li>
 </ul>
-
 <button onclick="checkMatchGame()">تحقق من الإجابة</button>
 <div class="section-result" id="match-result"></div>
 </div>
 
-<!-- لعبة 2: ترتيب الكلمات -->
+<!-- 2: ترتيب الكلمات لتكوين جملة صحيحة -->
 <div class="quiz-card">
 <h3>لعبة 2: ترتيب الكلمات لتكوين جملة صحيحة</h3>
 <p>رتب الكلمات لتكوين جملة صحيحة: "gehen / Ich / zur Schule"</p>
@@ -253,9 +250,9 @@ function checkSection(section, totalQuestions) {
 <div class="section-result" id="order-result"></div>
 </div>
 
-<!-- لعبة 3: اختر الكلمة الخاطئة -->
+<!-- 3: اختر الكلمة الخاطئة -->
 <div class="quiz-card">
-<h3>لعبة 3: اختر الكلمة الخاطئة في الجملة</h3>
+<h3>لعبة 3: اختر الكلمة الخاطئة</h3>
 <p>الجملة: "Ich geht zur Schule."</p>
 <form>
 <label><input type="radio" name="wrong" value="Ich"> Ich</label>
@@ -267,29 +264,163 @@ function checkSection(section, totalQuestions) {
 <div class="section-result" id="wrong-result"></div>
 </div>
 
-<script>
-// لعبة ترتيب الكلمات
-function checkOrderGame() {
-    const words = Array.from(document.querySelectorAll("#order-game .word")).map(w => w.textContent.trim());
-    const correct = ["Ich", "gehe", "zur Schule"];
-    const result = words.join(" ") === correct.join(" ") ? "صحيح ✅" : "خطأ ❌";
-    document.getElementById("order-result").innerText = result;
-}
+<!-- 4: أكمل الجملة -->
+<div class="quiz-card">
+<h3>لعبة 4: أكمل الجملة بالكلمة الصحيحة</h3>
+<p>Ich ___ Deutsch.</p>
+<form>
+<label><input type="radio" name="fill1" value="lerne"> lerne</label>
+<label><input type="radio" name="fill1" value="gehe"> gehe</label>
+<label><input type="radio" name="fill1" value="spiele"> spiele</label>
+</form>
+<button onclick="checkFill1()">تحقق من الإجابة</button>
+<div class="section-result" id="fill1-result"></div>
+</div>
 
-// لعبة اختر الكلمة الخاطئة
+<!-- 5: اختر المرادف الصحيح -->
+<div class="quiz-card">
+<h3>لعبة 5: اختر المرادف الصحيح</h3>
+<p>Wort: groß</p>
+<form>
+<label><input type="radio" name="syn1" value="big"> big</label>
+<label><input type="radio" name="syn1" value="small"> small</label>
+<label><input type="radio" name="syn1" value="fast"> fast</label>
+</form>
+<button onclick="checkSyn1()">تحقق من الإجابة</button>
+<div class="section-result" id="syn1-result"></div>
+</div>
+
+<!-- 6: اختر الضد -->
+<div class="quiz-card">
+<h3>لعبة 6: اختر الضد الصحيح</h3>
+<p>Wort: kalt</p>
+<form>
+<label><input type="radio" name="ant1" value="warm"> warm</label>
+<label><input type="radio" name="ant1" value="heiß"> heiß</label>
+<label><input type="radio" name="ant1" value="kühl"> kühl</label>
+</form>
+<button onclick="checkAnt1()">تحقق من الإجابة</button>
+<div class="section-result" id="ant1-result"></div>
+</div>
+
+<!-- 7: ضع الكلمات بالترتيب الأبجدي -->
+<div class="quiz-card">
+<h3>لعبة 7: ضع الكلمات بالترتيب الأبجدي</h3>
+<p>Wörter: "Haus, Apfel, Baum"</p>
+<div id="alpha-game">Haus, Apfel, Baum</div>
+<button onclick="checkAlpha()">تحقق من الإجابة</button>
+<div class="section-result" id="alpha-result"></div>
+</div>
+
+<!-- 8: استمع واختر الترجمة الصحيحة -->
+<div class="quiz-card">
+<h3>لعبة 8: استمع واختر الترجمة الصحيحة</h3>
+<audio controls>
+<source src="audio/hallo.mp3" type="audio/mpeg">
+متصفحك لا يدعم عنصر الصوت.
+</audio>
+<form>
+<label><input type="radio" name="listen1" value="مرحبا"> مرحبا</label>
+<label><input type="radio" name="listen1" value="شكراً"> شكراً</label>
+<label><input type="radio" name="listen1" value="وداعاً"> وداعاً</label>
+</form>
+<button onclick="checkListen1()">تحقق من الإجابة</button>
+<div class="section-result" id="listen1-result"></div>
+</div>
+
+<!-- 9: لعبة الذاكرة (طابق الكلمة مع الصورة) -->
+<div class="quiz-card">
+<h3>لعبة 9: لعبة الذاكرة</h3>
+<p>طابق الكلمة بالصورة (مثال)</p>
+<!-- يمكنك إضافة الصور لاحقاً -->
+<button onclick="checkMemory()">تحقق من الإجابة</button>
+<div class="section-result" id="memory-result"></div>
+</div>
+
+<!-- 10: ضع الفعل الصحيح في الفراغ -->
+<div class="quiz-card">
+<h3>لعبة 10: ضع الفعل الصحيح في الفراغ</h3>
+<p>Ich ___ ein Buch.</p>
+<form>
+<label><input type="radio" name="verb1" value="lese"> lese</label>
+<label><input type="radio" name="verb1" value="gehe"> gehe</label>
+<label><input type="radio" name="verb1" value="spiele"> spiele</label>
+</form>
+<button onclick="checkVerb1()">تحقق من الإجابة</button>
+<div class="section-result" id="verb1-result"></div>
+</div>
+
+<script>
+// دوال الألعاب البسيطة
+function checkOrderGame() {
+  const words = Array.from(document.querySelectorAll("#order-game .word")).map(w => w.textContent.trim());
+  const correct = ["Ich","gehe","zur Schule"];
+  document.getElementById("order-result").innerText = words.join(" ")===correct.join(" ") ? "صحيح ✅":"خطأ ❌";
+}
 function checkWrongWord() {
-    const selected = document.querySelector('input[name="wrong"]:checked');
-    if(!selected) { alert("اختر كلمة"); return; }
-    const result = selected.value === "geht" ? "صحيح ✅" : "خطأ ❌";
-    document.getElementById("wrong-result").innerText = result;
+  const selected=document.querySelector('input[name="wrong"]:checked');
+  if(!selected){ alert("اختر كلمة"); return; }
+  document.getElementById("wrong-result").innerText = selected.value==="geht"?"صحيح ✅":"خطأ ❌";
+}
+function checkFill1(){
+  const sel=document.querySelector('input[name="fill1"]:checked');
+  document.getElementById("fill1-result").innerText=sel && sel.value==="lerne"?"صحيح ✅":"خطأ ❌";
+}
+function checkSyn1(){
+  const sel=document.querySelector('input[name="syn1"]:checked');
+  document.getElementById("syn1-result").innerText=sel && sel.value==="big"?"صحيح ✅":"خطأ ❌";
+}
+function checkAnt1(){
+  const sel=document.querySelector('input[name="ant1"]:checked');
+  document.getElementById("ant1-result").innerText=sel && sel.value==="warm"?"صحيح ✅":"خطأ ❌";
+}
+function checkAlpha(){
+  const text = prompt("ضع الكلمات بالترتيب الأبجدي مفصولة بفواصل:");
+  document.getElementById("alpha-result").innerText = text && text.replace(/\s/g,'')==="Apfel,Baum,Haus"?"صحيح ✅":"خطأ ❌";
+}
+function checkListen1(){
+  const sel=document.querySelector('input[name="listen1"]:checked');
+  document.getElementById("listen1-result").innerText=sel && sel.value==="مرحبا"?"صحيح ✅":"خطأ ❌";
+}
+function checkMemory(){
+  document.getElementById("memory-result").innerText="تم التحقق (يمكن إضافة صور لاحقاً)";
+}
+function checkVerb1(){
+  const sel=document.querySelector('input[name="verb1"]:checked');
+  document.getElementById("verb1-result").innerText=sel && sel.value==="lese"?"صحيح ✅":"خطأ ❌";
 }
 
 // لعبة مطابقة الكلمات (نسخة مبسطة)
-function checkMatchGame() {
-    // لأغراض المثال، تحقق يدوي بسيط
-    // لنظام متقدم: يمكن استخدام drag & drop مع قائمة الإجابات
-    document.getElementById("match-result").innerText = "تم التحقق (يمكن تطوير لعبة السحب والإفلات لاحقاً)";
+const draggables=document.querySelectorAll('#match-game li');
+const answers=document.querySelectorAll('#match-answers li');
+draggables.forEach(d=>{
+  d.addEventListener('dragstart',e=>{ e.dataTransfer.setData('text', e.target.dataset.answer); });
+});
+answers.forEach(a=>{
+  a.addEventListener('dragover',e=>e.preventDefault());
+  a.addEventListener('drop',e=>{
+    const data=e.dataTransfer.getData('text');
+    if(data && translate(data)===a.textContent.trim()){
+      a.style.background="#c8e6c9";
+      a.textContent+=" ✅";
+    }else{ a.style.background="#ffcdd2"; }
+  });
+});
+function translate(word){ const dict={"Hallo":"مرحبا","Danke":"شكراً","Tschüss":"وداعاً"}; return dict[word]||"";}
+function checkMatchGame(){
+  let correctCount=0;
+  answers.forEach(ans=>{ if(ans.textContent.includes("✅")) correctCount++; });
+  document.getElementById("match-result").innerText=`تم حل ${correctCount} من ${answers.length} إجابات صحيحة`;
 }
+</script>
+<style>
+.word{padding:5px 10px;margin:5px;background:#eef2f7;border:1px solid #0055aa;border-radius:5px;cursor:pointer;}
+#order-game{display:flex;gap:10px;}
+</style>
+</div>
+
+
+
 </script>
 
 <style>
