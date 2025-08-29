@@ -11,13 +11,15 @@ header h1 {font-size:36px; margin:0 0 10px 0;}
 header a {display:inline-block; margin-top:15px; text-decoration:none; color:#fff; background:#ff9800; padding:10px 20px; border-radius:8px; font-size:18px; transition: background 0.3s ease;}
 header a:hover {background:#e68900;}
 main {padding:40px 20px; max-width:900px; margin:auto;}
-.quiz-card {background:white; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.15); padding:25px; margin-bottom:25px; text-align:right; position:relative;}
-.quiz-card h2 {font-size:22px; color:#004e92;}
+.section {margin-bottom:50px;}
+.section h2 {font-size:28px; color:#004e92; margin-bottom:20px;}
+.quiz-card {background:white; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.15); padding:20px; margin-bottom:20px; text-align:right; position:relative;}
+.quiz-card h3 {font-size:22px; color:#004e92;}
 .quiz-card label {display:block; margin:10px 0; font-size:18px; cursor:pointer;}
 button {background:#004e92; color:white; border:none; padding:12px 25px; font-size:18px; border-radius:8px; cursor:pointer; margin-top:15px; transition: background 0.3s ease;}
 button:hover {background:#0066cc;}
 .solution {margin-top:10px; color:#ff5722; font-weight:bold; display:none;}
-#result {font-size:20px; margin-top:20px; color:#ff5722;}
+.section-result {font-size:20px; margin-top:15px; color:#ff5722;}
 </style>
 </head>
 <body>
@@ -29,65 +31,132 @@ button:hover {background:#0066cc;}
 
 <main>
 
-<div class="quiz-card" data-answer="بيت">
-<h2>السؤال 1: ما معنى كلمة "Haus"؟</h2>
-<form>
-<label><input type="radio" name="q1" value="شجرة"> شجرة</label>
-<label><input type="radio" name="q1" value="بيت"> بيت</label>
-<label><input type="radio" name="q1" value="كتاب"> كتاب</label>
-</form>
-<div class="solution">الحل الصحيح: بيت</div>
-</div>
+<!-- قسم المفردات -->
+<div class="section" id="vocab-section">
+<h2>اختبار المفردات</h2>
 
-<div class="quiz-card" data-answer="هو">
-<h2>السؤال 2: ما هو الضمير المناسب لـ "er"? </h2>
-<form>
-<label><input type="radio" name="q2" value="هي"> هي</label>
-<label><input type="radio" name="q2" value="هو"> هو</label>
-<label><input type="radio" name="q2" value="أنا"> أنا</label>
-</form>
-<div class="solution">الحل الصحيح: هو</div>
-</div>
-
-<div class="quiz-card" data-answer="Danke">
-<h2>السؤال 3: كيف تقول "شكراً" بالألمانية؟</h2>
-<form>
-<label><input type="radio" name="q3" value="Danke"> Danke</label>
-<label><input type="radio" name="q3" value="Bitte"> Bitte</label>
-<label><input type="radio" name="q3" value="Hallo"> Hallo</label>
-</form>
-<div class="solution">الحل الصحيح: Danke</div>
-</div>
-
+<!-- 10 أسئلة -->
 <div class="quiz-card" data-answer="تفاحة">
-<h2>السؤال 4: ما معنى كلمة "Apfel"؟</h2>
+<h3>السؤال 1: ما معنى كلمة "Apfel"؟</h3>
 <form>
-<label><input type="radio" name="q4" value="تفاحة"> تفاحة</label>
-<label><input type="radio" name="q4" value="موز"> موز</label>
-<label><input type="radio" name="q4" value="عناب"> عناب</label>
+<label><input type="radio" name="vocab1" value="تفاحة"> تفاحة</label>
+<label><input type="radio" name="vocab1" value="موز"> موز</label>
+<label><input type="radio" name="vocab1" value="عنب"> عنب</label>
 </form>
 <div class="solution">الحل الصحيح: تفاحة</div>
 </div>
 
-<!-- يمكنك إضافة المزيد من الأسئلة بنفس الطريقة -->
+<div class="quiz-card" data-answer="بيت">
+<h3>السؤال 2: ما معنى كلمة "Haus"؟</h3>
+<form>
+<label><input type="radio" name="vocab2" value="شجرة"> شجرة</label>
+<label><input type="radio" name="vocab2" value="بيت"> بيت</label>
+<label><input type="radio" name="vocab2" value="كتاب"> كتاب</label>
+</form>
+<div class="solution">الحل الصحيح: بيت</div>
+</div>
 
-<button onclick="checkAnswers()">عرض الحلول والنتيجة</button>
-<div id="result"></div>
+<div class="quiz-card" data-answer="قلم">
+<h3>السؤال 3: ما معنى كلمة "Stift"؟</h3>
+<form>
+<label><input type="radio" name="vocab3" value="ورقة"> ورقة</label>
+<label><input type="radio" name="vocab3" value="قلم"> قلم</label>
+<label><input type="radio" name="vocab3" value="كتاب"> كتاب</label>
+</form>
+<div class="solution">الحل الصحيح: قلم</div>
+</div>
+
+<div class="quiz-card" data-answer="كتاب">
+<h3>السؤال 4: ما معنى كلمة "Buch"؟</h3>
+<form>
+<label><input type="radio" name="vocab4" value="دفتر"> دفتر</label>
+<label><input type="radio" name="vocab4" value="قلم"> قلم</label>
+<label><input type="radio" name="vocab4" value="كتاب"> كتاب</label>
+</form>
+<div class="solution">الحل الصحيح: كتاب</div>
+</div>
+
+<div class="quiz-card" data-answer="ماء">
+<h3>السؤال 5: ما معنى كلمة "Wasser"؟</h3>
+<form>
+<label><input type="radio" name="vocab5" value="نار"> نار</label>
+<label><input type="radio" name="vocab5" value="ماء"> ماء</label>
+<label><input type="radio" name="vocab5" value="هواء"> هواء</label>
+</form>
+<div class="solution">الحل الصحيح: ماء</div>
+</div>
+
+<div class="quiz-card" data-answer="شجرة">
+<h3>السؤال 6: ما معنى كلمة "Baum"؟</h3>
+<form>
+<label><input type="radio" name="vocab6" value="زهرة"> زهرة</label>
+<label><input type="radio" name="vocab6" value="شجرة"> شجرة</label>
+<label><input type="radio" name="vocab6" value="بيت"> بيت</label>
+</form>
+<div class="solution">الحل الصحيح: شجرة</div>
+</div>
+
+<div class="quiz-card" data-answer="قط">
+<h3>السؤال 7: ما معنى كلمة "Katze"؟</h3>
+<form>
+<label><input type="radio" name="vocab7" value="كلب"> كلب</label>
+<label><input type="radio" name="vocab7" value="قط"> قط</label>
+<label><input type="radio" name="vocab7" value="عصفور"> عصفور</label>
+</form>
+<div class="solution">الحل الصحيح: قط</div>
+</div>
+
+<div class="quiz-card" data-answer="كلب">
+<h3>السؤال 8: ما معنى كلمة "Hund"؟</h3>
+<form>
+<label><input type="radio" name="vocab8" value="كلب"> كلب</label>
+<label><input type="radio" name="vocab8" value="قط"> قط</label>
+<label><input type="radio" name="vocab8" value="حصان"> حصان</label>
+</form>
+<div class="solution">الحل الصحيح: كلب</div>
+</div>
+
+<div class="quiz-card" data-answer="باب">
+<h3>السؤال 9: ما معنى كلمة "Tür"؟</h3>
+<form>
+<label><input type="radio" name="vocab9" value="نافذة"> نافذة</label>
+<label><input type="radio" name="vocab9" value="باب"> باب</label>
+<label><input type="radio" name="vocab9" value="سقف"> سقف</label>
+</form>
+<div class="solution">الحل الصحيح: باب</div>
+</div>
+
+<div class="quiz-card" data-answer="كرسي">
+<h3>السؤال 10: ما معنى كلمة "Stuhl"؟</h3>
+<form>
+<label><input type="radio" name="vocab10" value="طاولة"> طاولة</label>
+<label><input type="radio" name="vocab10" value="كرسي"> كرسي</label>
+<label><input type="radio" name="vocab10" value="سرير"> سرير</label>
+</form>
+<div class="solution">الحل الصحيح: كرسي</div>
+</div>
+
+<button onclick="checkSection('vocab',10)">عرض النتيجة والحلول</button>
+<div class="section-result" id="vocab-result"></div>
+</div>
+
+<!-- أكمل بقية الأقسام بنفس الأسلوب (القواعد، الأدوات المعرفة) مع 10 أسئلة لكل قسم -->  
 
 <script>
-function checkAnswers() {
-    const cards = document.querySelectorAll('.quiz-card');
+function checkSection(section, totalQuestions) {
     let score = 0;
-    cards.forEach((card, index) => {
+    const cards = document.querySelectorAll(`#${section}-section .quiz-card`);
+    cards.forEach(card => {
         const selected = card.querySelector('input[type="radio"]:checked');
         const solution = card.querySelector('.solution');
-        solution.style.display = 'block'; // عرض الحل
+        solution.style.display = 'block';
         if(selected && selected.value === card.dataset.answer) score++;
     });
-    document.getElementById('result').innerText = `لقد حصلت على ${score} من ${cards.length} نقاط`;
+    document.getElementById(`${section}-result`).innerText = `لقد حصلت على ${score} من ${totalQuestions} نقاط في اختبار ${section}`;
 }
 </script>
 
 </main>
 </body>
 </html>
+
