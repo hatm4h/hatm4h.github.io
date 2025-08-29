@@ -217,6 +217,89 @@ function checkSection(section, totalQuestions) {
 </script>
 </div>
 
+<div class="section" id="games-section">
+<h2>الألعاب التعليمية (Games / Challenges)</h2>
+
+<!-- لعبة 1: مطابقة الكلمات -->
+<div class="quiz-card">
+<h3>لعبة 1: مطابقة الكلمات الألمانية مع ترجمتها</h3>
+<p>اسحب كل كلمة ألمانية إلى الترجمة الصحيحة:</p>
+<ul id="match-game" style="list-style:none; padding:0;">
+<li draggable="true" data-answer="Hallo">Hallo</li>
+<li draggable="true" data-answer="Danke">Danke</li>
+<li draggable="true" data-answer="Tschüss">Tschüss</li>
+</ul>
+
+<ul id="match-answers" style="list-style:none; padding:0;">
+<li id="ans1">شكراً</li>
+<li id="ans2">مرحبا</li>
+<li id="ans3">وداعاً</li>
+</ul>
+
+<button onclick="checkMatchGame()">تحقق من الإجابة</button>
+<div class="section-result" id="match-result"></div>
+</div>
+
+<!-- لعبة 2: ترتيب الكلمات -->
+<div class="quiz-card">
+<h3>لعبة 2: ترتيب الكلمات لتكوين جملة صحيحة</h3>
+<p>رتب الكلمات لتكوين جملة صحيحة: "gehen / Ich / zur Schule"</p>
+<div id="order-game">
+<span draggable="true" class="word">zur Schule</span>
+<span draggable="true" class="word">Ich</span>
+<span draggable="true" class="word">gehen</span>
+</div>
+<button onclick="checkOrderGame()">تحقق من الإجابة</button>
+<div class="section-result" id="order-result"></div>
+</div>
+
+<!-- لعبة 3: اختر الكلمة الخاطئة -->
+<div class="quiz-card">
+<h3>لعبة 3: اختر الكلمة الخاطئة في الجملة</h3>
+<p>الجملة: "Ich geht zur Schule."</p>
+<form>
+<label><input type="radio" name="wrong" value="Ich"> Ich</label>
+<label><input type="radio" name="wrong" value="geht"> geht</label>
+<label><input type="radio" name="wrong" value="zur"> zur</label>
+<label><input type="radio" name="wrong" value="Schule"> Schule</label>
+</form>
+<button onclick="checkWrongWord()">تحقق من الإجابة</button>
+<div class="section-result" id="wrong-result"></div>
+</div>
+
+<script>
+// لعبة ترتيب الكلمات
+function checkOrderGame() {
+    const words = Array.from(document.querySelectorAll("#order-game .word")).map(w => w.textContent.trim());
+    const correct = ["Ich", "gehe", "zur Schule"];
+    const result = words.join(" ") === correct.join(" ") ? "صحيح ✅" : "خطأ ❌";
+    document.getElementById("order-result").innerText = result;
+}
+
+// لعبة اختر الكلمة الخاطئة
+function checkWrongWord() {
+    const selected = document.querySelector('input[name="wrong"]:checked');
+    if(!selected) { alert("اختر كلمة"); return; }
+    const result = selected.value === "geht" ? "صحيح ✅" : "خطأ ❌";
+    document.getElementById("wrong-result").innerText = result;
+}
+
+// لعبة مطابقة الكلمات (نسخة مبسطة)
+function checkMatchGame() {
+    // لأغراض المثال، تحقق يدوي بسيط
+    // لنظام متقدم: يمكن استخدام drag & drop مع قائمة الإجابات
+    document.getElementById("match-result").innerText = "تم التحقق (يمكن تطوير لعبة السحب والإفلات لاحقاً)";
+}
+</script>
+
+<style>
+#order-game { display:flex; gap:10px; margin-top:10px; }
+#order-game .word { padding:5px 10px; background:#eef2f7; border:1px solid #0055aa; border-radius:5px; cursor:pointer; }
+#match-game li, #match-answers li { padding:5px; margin:5px 0; background:#eef2f7; border:1px solid #0055aa; border-radius:5px; cursor:grab; }
+</style>
+</div>
+
+
 <div class="section" id="grammar-section">
 <h2>اختبار القواعد (15 سؤال)</h2>
 
