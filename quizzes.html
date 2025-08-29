@@ -20,43 +20,6 @@ button {background:#004e92; color:white; border:none; padding:12px 25px; font-si
 button:hover {background:#0066cc;}
 .solution {margin-top:10px; color:#ff5722; font-weight:bold; display:none;}
 .section-result {font-size:20px; margin-top:15px; color:#ff5722;}
-/* تكبير الخط على الجوال */
-@media (max-width: 600px) {
-  body {
-    font-size: 18px; /* حجم أساسي أكبر */
-  }
-
-  header h1 {
-    font-size: 36px; /* تكبير العنوان */
-  }
-
-  header p {
-    font-size: 22px; /* تكبير النص التوضيحي */
-  }
-
-  .section h2 {
-    font-size: 28px; /* تكبير عناوين الأقسام */
-  }
-
-  .section h3 {
-    font-size: 22px; /* تكبير أسئلة الألعاب والاختبارات */
-  }
-
-  .quiz-card form label {
-    font-size: 20px; /* تكبير خيارات الاختيار */
-  }
-
-  button {
-    font-size: 18px; /* تكبير أزرار التفاعل */
-    padding: 12px 20px;
-  }
-
-  .word {
-    font-size: 20px; /* تكبير كلمات ترتيب الجملة */
-    padding: 10px 15px;
-  }
-}
-
 </style>
 </head>
 <body>
@@ -1145,6 +1108,49 @@ function showWritingSolutions() {
     });
 }
 </script>
+/* تكبير الخط في قسم اختبارات قصيرة فقط */
+#vocab-section {
+  font-size: 18px; /* حجم الخط الأساسي داخل القسم */
+}
+
+#vocab-section h2 {
+  font-size: 28px; /* تكبير عنوان القسم */
+}
+
+#vocab-section h3 {
+  font-size: 22px; /* تكبير أسئلة الاختبارات */
+}
+
+#vocab-section form label {
+  font-size: 20px; /* تكبير خيارات الاختيار */
+}
+
+#vocab-section button {
+  font-size: 18px; /* تكبير أزرار التفاعل */
+  padding: 12px 20px;
+}
+
+/* تكبير الخط على الجوال بشكل إضافي */
+@media (max-width: 600px) {
+  #vocab-section {
+    font-size: 20px;
+  }
+  #vocab-section h2 {
+    font-size: 32px;
+  }
+  #vocab-section h3 {
+    font-size: 24px;
+  }
+  #vocab-section form label {
+    font-size: 22px;
+  }
+  #vocab-section button {
+    font-size: 20px;
+    padding: 14px 22px;
+  }
+}
+
+
 </div>
     
 
