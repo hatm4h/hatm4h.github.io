@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>اختبارات قصيرة | تعلم الألمانية</title>
+<title>اختبارات متقدمة | تعلم الألمانية</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {font-family: 'Cairo', sans-serif; margin:0; padding:0; background:#f4f6fb; color:#333; text-align:center;}
@@ -10,126 +10,81 @@ header {background: linear-gradient(135deg,#004e92,#000428); color:white; paddin
 header h1 {font-size:36px; margin:0 0 10px 0;}
 header a {display:inline-block; margin-top:15px; text-decoration:none; color:#fff; background:#ff9800; padding:10px 20px; border-radius:8px; font-size:18px; transition: background 0.3s ease;}
 header a:hover {background:#e68900;}
-main {padding:40px 20px; max-width:800px; margin:auto;}
-.quiz-card {background:white; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.15); padding:25px; margin-bottom:25px; text-align:right;}
+main {padding:40px 20px; max-width:900px; margin:auto;}
+.quiz-card {background:white; border-radius:15px; box-shadow:0 6px 15px rgba(0,0,0,0.15); padding:25px; margin-bottom:25px; text-align:right; position:relative;}
 .quiz-card h2 {font-size:22px; color:#004e92;}
 .quiz-card label {display:block; margin:10px 0; font-size:18px; cursor:pointer;}
 button {background:#004e92; color:white; border:none; padding:12px 25px; font-size:18px; border-radius:8px; cursor:pointer; margin-top:15px; transition: background 0.3s ease;}
 button:hover {background:#0066cc;}
+.solution {margin-top:10px; color:#ff5722; font-weight:bold; display:none;}
 #result {font-size:20px; margin-top:20px; color:#ff5722;}
 </style>
 </head>
 <body>
+
 <header>
-<h1>اختبارات قصيرة لتعلم الألمانية</h1>
+<h1>اختبارات متقدمة لتعلم الألمانية</h1>
 <a href="index.html">🏠 العودة للصفحة الرئيسية</a>
 </header>
 
 <main>
 
-<!-- الأسئلة -->
-<div class="quiz-card">
+<div class="quiz-card" data-answer="بيت">
 <h2>السؤال 1: ما معنى كلمة "Haus"؟</h2>
 <form>
-<label><input type="radio" name="q1" value="خطأ"> شجرة</label>
-<label><input type="radio" name="q1" value="صحيح"> بيت</label>
-<label><input type="radio" name="q1" value="خطأ"> كتاب</label>
+<label><input type="radio" name="q1" value="شجرة"> شجرة</label>
+<label><input type="radio" name="q1" value="بيت"> بيت</label>
+<label><input type="radio" name="q1" value="كتاب"> كتاب</label>
 </form>
+<div class="solution">الحل الصحيح: بيت</div>
 </div>
 
-<div class="quiz-card">
+<div class="quiz-card" data-answer="هو">
 <h2>السؤال 2: ما هو الضمير المناسب لـ "er"? </h2>
 <form>
-<label><input type="radio" name="q2" value="خطأ"> هي</label>
-<label><input type="radio" name="q2" value="صحيح"> هو</label>
-<label><input type="radio" name="q2" value="خطأ"> أنا</label>
+<label><input type="radio" name="q2" value="هي"> هي</label>
+<label><input type="radio" name="q2" value="هو"> هو</label>
+<label><input type="radio" name="q2" value="أنا"> أنا</label>
 </form>
+<div class="solution">الحل الصحيح: هو</div>
 </div>
 
-<div class="quiz-card">
+<div class="quiz-card" data-answer="Danke">
 <h2>السؤال 3: كيف تقول "شكراً" بالألمانية؟</h2>
 <form>
-<label><input type="radio" name="q3" value="صحيح"> Danke</label>
-<label><input type="radio" name="q3" value="خطأ"> Bitte</label>
-<label><input type="radio" name="q3" value="خطأ"> Hallo</label>
+<label><input type="radio" name="q3" value="Danke"> Danke</label>
+<label><input type="radio" name="q3" value="Bitte"> Bitte</label>
+<label><input type="radio" name="q3" value="Hallo"> Hallo</label>
 </form>
+<div class="solution">الحل الصحيح: Danke</div>
 </div>
 
-<div class="quiz-card">
+<div class="quiz-card" data-answer="تفاحة">
 <h2>السؤال 4: ما معنى كلمة "Apfel"؟</h2>
 <form>
-<label><input type="radio" name="q4" value="صحيح"> تفاحة</label>
-<label><input type="radio" name="q4" value="خطأ"> موز</label>
-<label><input type="radio" name="q4" value="خطأ"> عنب</label>
+<label><input type="radio" name="q4" value="تفاحة"> تفاحة</label>
+<label><input type="radio" name="q4" value="موز"> موز</label>
+<label><input type="radio" name="q4" value="عناب"> عناب</label>
 </form>
+<div class="solution">الحل الصحيح: تفاحة</div>
 </div>
 
-<div class="quiz-card">
-<h2>السؤال 5: ما هو الجمع لكلمة "Kind"؟</h2>
-<form>
-<label><input type="radio" name="q5" value="خطأ"> Kinden</label>
-<label><input type="radio" name="q5" value="صحيح"> Kinder</label>
-<label><input type="radio" name="q5" value="خطأ"> Kinde</label>
-</form>
-</div>
+<!-- يمكنك إضافة المزيد من الأسئلة بنفس الطريقة -->
 
-<div class="quiz-card">
-<h2>السؤال 6: اختر الجملة الصحيحة: "أنا أدرس الألمانية"</h2>
-<form>
-<label><input type="radio" name="q6" value="خطأ"> Ich lerne Deutsches</label>
-<label><input type="radio" name="q6" value="صحيح"> Ich lerne Deutsch</label>
-<label><input type="radio" name="q6" value="خطأ"> Ich lern Deutsch</label>
-</form>
-</div>
-
-<div class="quiz-card">
-<h2>السؤال 7: ما معنى كلمة "Freund"? </h2>
-<form>
-<label><input type="radio" name="q7" value="خطأ"> جار</label>
-<label><input type="radio" name="q7" value="صحيح"> صديق</label>
-<label><input type="radio" name="q7" value="خطأ"> أخ</label>
-</form>
-</div>
-
-<div class="quiz-card">
-<h2>السؤال 8: أي من هذه الأدوات معرفة؟</h2>
-<form>
-<label><input type="radio" name="q8" value="صحيح"> der Stuhl</label>
-<label><input type="radio" name="q8" value="خطأ"> ein Stuhl</label>
-<label><input type="radio" name="q8" value="خطأ"> Stühle</label>
-</form>
-</div>
-
-<div class="quiz-card">
-<h2>السؤال 9: كيف تقول "مرحباً" بالألمانية؟</h2>
-<form>
-<label><input type="radio" name="q9" value="خطأ"> Danke</label>
-<label><input type="radio" name="q9" value="صحيح"> Hallo</label>
-<label><input type="radio" name="q9" value="خطأ"> Tschüss</label>
-</form>
-</div>
-
-<div class="quiz-card">
-<h2>السؤال 10: ما معنى كلمة "Buch"? </h2>
-<form>
-<label><input type="radio" name="q10" value="خطأ"> قلم</label>
-<label><input type="radio" name="q10" value="خطأ"> دفتر</label>
-<label><input type="radio" name="q10" value="صحيح"> كتاب</label>
-</form>
-</div>
-
-<button onclick="checkAnswers()">عرض النتيجة</button>
+<button onclick="checkAnswers()">عرض الحلول والنتيجة</button>
 <div id="result"></div>
 
 <script>
 function checkAnswers() {
+    const cards = document.querySelectorAll('.quiz-card');
     let score = 0;
-    const total = 10;
-    for(let i=1;i<=10;i++){
-        const q = document.querySelector('input[name="q'+i+'"]:checked');
-        if(q && q.value==='صحيح') score++;
-    }
-    document.getElementById('result').innerText = `لقد حصلت على ${score} من ${total} نقاط`;
+    cards.forEach((card, index) => {
+        const selected = card.querySelector('input[type="radio"]:checked');
+        const solution = card.querySelector('.solution');
+        solution.style.display = 'block'; // عرض الحل
+        if(selected && selected.value === card.dataset.answer) score++;
+    });
+    document.getElementById('result').innerText = `لقد حصلت على ${score} من ${cards.length} نقاط`;
 }
 </script>
 
