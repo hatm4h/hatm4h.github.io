@@ -1215,7 +1215,51 @@ function showSolutions() {
 
   </style>
 </div>
-    
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>اختبار بسيط</title>
+  <style>
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .correct {
+      background-color: green;
+      color: white;
+      font-weight: bold;
+    }
+    .wrong {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>اختر الإجابة الصحيحة:</h2>
+  
+  <button onclick="checkAnswer(this, true)">الإجابة الصحيحة</button>
+  <button onclick="checkAnswer(this, false)">الإجابة الخاطئة</button>
+  <button onclick="checkAnswer(this, false)">إجابة خاطئة أخرى</button>
+
+  <script>
+    function checkAnswer(button, isCorrect) {
+      if (isCorrect) {
+        button.classList.add('correct');
+        button.classList.remove('wrong');
+      } else {
+        button.classList.add('wrong');
+        button.classList.remove('correct');
+      }
+    }
+  </script>
+</body>
+</html>
+   
 
 
 
