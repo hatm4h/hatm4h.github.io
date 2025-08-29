@@ -1,109 +1,125 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>📖 موقع تعليمي</title>
+<title>تعلم الألمانية بسهولة | موقع تعليمي</title>
+
+<!-- خط عربي جميل -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- أيقونة للموقع -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <style>
- body {
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   margin: 0;
-   padding: 0;
-   background: #eef2f7;
-   color: #333;
-   text-align: center;
- }
- header {
-   background: #0055aa;
-   color: white;
-   padding: 50px 20px;
-   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
- }
- header h1 {
-   font-size: 38px;
-   margin: 0 0 10px 0;
- }
- header p {
-   font-size: 22px;
-   margin: 0;
- }
- main {
-   padding: 50px 20px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: 25px;
- }
- .section {
-   background: white;
-   border-radius: 15px;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-   width: 230px;
-   padding: 35px 20px;
-   transition: transform 0.3s, box-shadow 0.3s;
- }
- .section:hover {
-   transform: translateY(-7px);
-   box-shadow: 0 10px 15px rgba(0,0,0,0.2);
- }
- .section a {
-   text-decoration: none;
-   color: #0055aa;
-   font-weight: bold;
-   font-size: 21px;
-   display: block;
-   margin-top: 12px;
- }
- .section-icon {
-   font-size: 52px;
-   margin-bottom: 18px;
-   color: #0055aa;
- }
- /* تكبير الخط على الجوال */
- @media (max-width: 600px) {
-   header h1 {
-     font-size: 44px;
-   }
-   header p {
-     font-size: 26px;
-   }
-   .section {
-     width: 90%;
-     padding: 35px;
-   }
-   .section a {
-     font-size: 30px;
-   }
-   .section-icon {
-     font-size: 65px;
-   }
- }
+  body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f6fb;
+    color: #333;
+    text-align: center;
+  }
+  header {
+    background: linear-gradient(135deg, #004e92, #000428);
+    color: white;
+    padding: 60px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  }
+  header h1 {
+    font-size: 40px;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+  }
+  header p {
+    font-size: 22px;
+    margin: 0;
+    opacity: 0.9;
+  }
+  main {
+    padding: 60px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  .section {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    width: 250px;
+    padding: 40px 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .section:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.25);
+  }
+  .section a {
+    text-decoration: none;
+    color: #004e92;
+    font-weight: bold;
+    font-size: 22px;
+    display: block;
+    margin-top: 15px;
+  }
+  .section-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #004e92;
+  }
+
+  /* استجابة للجوال */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 34px;
+    }
+    header p {
+      font-size: 20px;
+    }
+    .section {
+      width: 90%;
+      padding: 35px;
+    }
+    .section a {
+      font-size: 26px;
+    }
+    .section-icon {
+      font-size: 70px;
+    }
+  }
 </style>
 </head>
 <body>
 <header>
-<h1>👋 مرحباً بك في موقعي التعليمي</h1>
-<p>استكشف الأقسام التعليمية وتعلم اللغة الألمانية بسهولة</p>
+  <h1>👋 أهلاً بك في موقع تعلم الألمانية</h1>
+  <p>اختر القسم الذي تريده وابدأ رحلتك التعليمية بسهولة ووضوح</p>
 </header>
+
 <main>
-<div class="section">
-<div class="section-icon">📚</div>
-<a href="words.html">مفردات</a>
-</div>
-<div class="section">
-<div class="section-icon">✍️</div>
-<a href="words-examples.htm">كلمات مع أمثلة</a>
-</div>
-<div class="section">
-<div class="section-icon">📧</div>
-<a href="a1_emails.html">إيميلات</a>
-</div>
-<div class="section">
-<div class="section-icon">📖</div>
-<a href="vocabulary.html">ات</a>
-</div>
+  <div class="section">
+    <div class="section-icon">📚</div>
+    <a href="words.html">مفردات أساسية</a>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">✍️</div>
+    <a href="words-examples.html">كلمات مع أمثلة</a>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">📧</div>
+    <a href="a1_emails.html">إيميلات تدريبية</a>
+  </div>
+
+  <div class="section">
+    <div class="section-icon">📖</div>
+    <a href="vocabulary.html">مفردات متقدمة</a>
+  </div>
 </main>
 </body>
 </html>
+
+
 
 
 
