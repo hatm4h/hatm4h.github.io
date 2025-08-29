@@ -1202,34 +1202,7 @@ button:hover {background:#0066cc;}
 <body>
 
 <header>
-    <h1>لعبة الاختبار</h1>
-    <a href="#main">ابدأ اللعبة</a>
-</header>
-
-<main id="main">
-    <section class="section">
-        <h2>الأسئلة</h2>
-        <div class="quiz-card">
-            <h3>السؤال 1: ما هي عاصمة فرنسا؟</h3>
-            <label><input type="radio" name="q1" value="1"> باريس</label>
-            <label><input type="radio" name="q1" value="0"> لندن</label>
-            <label><input type="radio" name="q1" value="0"> مدريد</label>
-            <div class="solution">الإجابة الصحيحة: باريس</div>
-        </div>
-
-        <div class="quiz-card">
-            <h3>السؤال 2: ما هو أكبر كوكب في النظام الشمسي؟</h3>
-            <label><input type="radio" name="q2" value="1"> المشتري</label>
-            <label><input type="radio" name="q2" value="0"> الأرض</label>
-            <label><input type="radio" name="q2" value="0"> المريخ</label>
-            <div class="solution">الإجابة الصحيحة: المشتري</div>
-        </div>
-
-        <button onclick="showSolutions()">إظهار الحلول</button>
-        <div class="section-result" id="result"></div>
-    </section>
-</main>
-
+  
 <script>
 function showSolutions() {
     const solutions = document.querySelectorAll('.solution');
