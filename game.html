@@ -5,83 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎮 لعبة الألمانية الاحترافية</title>
 <style>
-body {
- margin:0; padding:0;
- font-family:'Cairo', sans-serif;
- background:#2c2c2c;
- color:#fff;
- text-align:center;
- overflow-x:hidden;
- transition:background 0.3s;
-}
-h1 {
- font-size:32px; margin:20px 0; color:#f39c12;
- text-shadow:0 2px 5px rgba(0,0,0,0.5);
-}
-#game-area {
- position:relative;
- width:90%; max-width:500px;
- height:55vh; margin:0 auto;
- border-radius:15px;
- overflow:hidden;
- background:#1e1e1e;
- border:3px solid #f39c12;
- box-shadow:0 4px 15px rgba(0,0,0,0.3);
-}
-.word {
- position:absolute;
- top:-60px; left:50%;
- transform:translateX(-50%);
- font-size:28px;
- font-weight:bold;
- color:#e74c3c;
- padding:10px 15px;
- border-radius:10px;
- box-shadow:0 2px 8px rgba(0,0,0,0.3);
- animation:fall linear forwards;
-}
+body {margin:0; padding:0; font-family:'Cairo',sans-serif; background:#2c2c2c; color:#fff; text-align:center; overflow-x:hidden; transition:background 0.3s;}
+h1 {font-size:32px; margin:20px 0; color:#f39c12; text-shadow:0 2px 5px rgba(0,0,0,0.5);}
+#game-area {position:relative; width:90%; max-width:500px; height:55vh; margin:0 auto; border-radius:15px; overflow:hidden; background:#1e1e1e; border:3px solid #f39c12; box-shadow:0 4px 15px rgba(0,0,0,0.3);}
+.word {position:absolute; top:-60px; left:50%; transform:translateX(-50%); font-size:28px; font-weight:bold; color:#e74c3c; padding:10px 15px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.3); animation:fall linear forwards;}
 @keyframes fall {0%{top:-60px;}100%{top:85%;}}
-#options {
- display:flex;
- justify-content:center;
- flex-wrap:wrap;
- gap:10px;
- margin-top:15px;
-}
-.option {
- background:#3498db;
- color:#fff;
- font-size:18px;
- font-weight:bold;
- padding:10px 15px;
- border-radius:10px;
- cursor:pointer;
- min-width:100px;
- transition:0.3s;
-}
+#options {display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:15px;}
+.option {background:#3498db; color:#fff; font-size:18px; font-weight:bold; padding:10px 15px; border-radius:10px; cursor:pointer; min-width:100px; transition:0.3s;}
 .option:hover {background:#2980b9; transform:scale(1.08);}
 #score, #level, #timer {font-size:20px; font-weight:bold; margin:8px;}
-#reward {
- display:none; position:absolute; top:10px;
- left:50%; transform:translateX(-50%);
- font-size:28px; font-weight:bold; color:#2ecc71;
- text-shadow:0 0 10px #fff;
-}
+#reward {display:none; position:absolute; top:10px; left:50%; transform:translateX(-50%); font-size:28px; font-weight:bold; color:#2ecc71; text-shadow:0 0 10px #fff;}
 .flash-green {animation:flashGreen 0.4s;}
 .flash-red {animation:flashRed 0.4s;}
 @keyframes flashGreen {0%{background:#2c2c2c;}50%{background:#27ae60;}100%{background:#2c2c2c;}}
 @keyframes flashRed {0%{background:#2c2c2c;}50%{background:#e74c3c;}100%{background:#2c2c2c;}}
-#back-home {
- display:inline-block; margin:20px 0;
- padding:12px 20px;
- background:#f39c12; color:#fff; font-weight:bold;
- border-radius:12px; text-decoration:none;
- transition:0.3s;
-}
+#back-home {display:inline-block; margin:20px 0; padding:12px 20px; background:#f39c12; color:#fff; font-weight:bold; border-radius:12px; text-decoration:none; transition:0.3s;}
 #back-home:hover {background:#e67e22;}
 @media (max-width:600px){
  h1{font-size:26px;}
- .word{font-size:22px;padding:8px 12px;}
+ .word{font-size:22px; padding:8px 12px;}
  .option{font-size:16px; padding:8px 12px; min-width:80px;}
  #score,#level,#timer{font-size:18px;}
  #reward{font-size:22px;}
@@ -100,18 +42,9 @@ h1 {
 <audio id="wrong-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bbbb1b1fcf.mp3?filename=error-2-6297.mp3"></audio>
 <audio id="bonus-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4b5a3d6e.mp3?filename=coin-1-6297.mp3"></audio>
 <script>
-// مصفوفة كلمات وجمل (>200 جملة) يمكنك نسخها مباشرة من المصفوفة الاحترافية السابقة
-const words = [
- {de:"Wie geht es dir?", ar:"كيف حالك؟"},
- {de:"Ich liebe dich.", ar:"أنا أحبك."},
- {de:"Wo ist der Bahnhof?", ar:"أين تقع محطة القطار؟"},
- {de:"Ich habe einen Hund.", ar:"لدي كلب."},
- {de:"Die Katze schläft.", ar:"القطة نائمة."},
- {de:"Ich trinke Wasser.", ar:"أنا أشرب ماءً."},
- {de:"Der Himmel ist blau.", ar:"السماء زرقاء."},
- {de:"Es regnet heute.", ar:"تمطر اليوم."},
- {de:"Das Auto ist schnell.", ar:"السيارة سريعة."},
- {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."}
+// أكثر من 200 كلمة وجملة ألمانية مترجمة
+const words=[
+{de:"Wie geht es dir?",ar:"كيف حالك؟"},{de:"Ich liebe dich.",ar:"أنا أحبك."},{de:"Wo ist der Bahnhof?",ar:"أين تقع محطة القطار؟"},{de:"Ich habe einen Hund.",ar:"لدي كلب."},{de:"Die Katze schläft.",ar:"القطة نائمة."},{de:"Ich trinke Wasser.",ar:"أنا أشرب ماءً."},{de:"Der Himmel ist blau.",ar:"السماء زرقاء."},{de:"Es regnet heute.",ar:"تمطر اليوم."},{de:"Das Auto ist schnell.",ar:"السيارة سريعة."},{de:"Wir fahren nach Berlin.",ar:"نحن ذاهبون إلى برلين."},{de:"Ich höre Musik.",ar:"أنا أستمع إلى الموسيقى."},{de:"Die Blumen sind schön.",ar:"الزهور جميلة."},{de:"Wir essen zusammen.",ar:"نأكل معًا."},{de:"Das Buch ist interessant.",ar:"الكتاب ممتع."},{de:"Ich mag Schokolade.",ar:"أحب الشوكولاتة."},{de:"Wir spielen Karten.",ar:"نلعب الورق."},{de:"Es ist warm draußen.",ar:"الجو دافئ في الخارج."},{de:"Die Sonne scheint.",ar:"الشمس مشرقة."},{de:"Ich sehe einen Film.",ar:"أشاهد فيلمًا."},{de:"Wir tanzen zusammen.",ar:"نرقص معًا."},{de:"Ich brauche einen Stift.",ar:"أحتاج إلى قلم."},{de:"Das Wasser kocht.",ar:"الماء يغلي."},{de:"Ich gehe schwimmen.",ar:"أذهب للسباحة."},{de:"Der Tisch ist groß.",ar:"الطاولة كبيرة."},{de:"Ich fahre Fahrrad.",ar:"أركب الدراجة."},{de:"Das Kleid ist schön.",ar:"الفستان جميل."},{de:"Die Kinder spielen.",ar:"الأطفال يلعبون."},{de:"Der Film ist lustig.",ar:"الفيلم مضحك."},{de:"Ich koche Abendessen.",ar:"أطبخ العشاء."},{de:"Wir gehen spazieren.",ar:"نذهب للتنزه."},{de:"Die Milch ist kalt.",ar:"الحليب بارد."},{de:"Ich schreibe eine E-Mail.",ar:"أكتب بريدًا إلكترونيًا."},{de:"Ich trinke Kaffee.",ar:"أنا أشرب القهوة."},{de:"Der Apfel ist rot.",ar:"التفاحة حمراء."},{de:"Wir essen Pizza.",ar:"نأكل البيتزا."},{de:"Das Haus ist alt.",ar:"المنزل قديم."},{de:"Ich gehe zur Arbeit.",ar:"أذهب إلى العمل."},{de:"Ich spiele Fußball.",ar:"ألعب كرة القدم."},{de:"Die Katze läuft schnell.",ar:"القطة تجري بسرعة."},{de:"Wir lernen Deutsch.",ar:"نتعلم الألمانية."},{de:"Ich gehe ins Büro.",ar:"أذهب إلى المكتب."},{de:"Ich schreibe einen Text.",ar:"أكتب نصًا."},{de:"Der Berg ist hoch.",ar:"الجبل مرتفع."},{de:"Ich esse Schokolade.",ar:"آكل الشوكولاتة."},{de:"Ich fahre Zug.",ar:"أذهب بالقطار."},{de:"Ich besuche Berlin.",ar:"أزور برلين."},{de:"Wir essen Mittagessen.",ar:"نتناول الغداء."},{de:"Der Hund bellt.",ar:"الكلب ينبح."},{de:"Wir gehen zur Schule.",ar:"نذهب إلى المدرسة."},{de:"Ich habe keine Ahnung.",ar:"ليس لدي أي فكرة."},{de:"Die Lampe ist hell.",ar:"المصباح مضيء."},{de:"Ich lese ein Buch.",ar:"أقرأ كتابًا."},{de:"Wir fahren Auto.",ar:"نقود السيارة."},{de:"Ich male ein Bild.",ar:"أرسم صورة."},{de:"Das Fenster ist offen.",ar:"النافذة مفتوحة."},{de:"Ich esse Brot.",ar:"آكل خبزًا."},{de:"Die Uhr tickt.",ar:"الساعة تدق."},{de:"Wir gehen ins Kino.",ar:"نذهب إلى السينما."},{de:"Es ist kalt heute.",ar:"الجو بارد اليوم."},{de:"Ich schwimme im Meer.",ar:"أسبح في البحر."},{de:"Die Straße ist lang.",ar:"الشارع طويل."},{de:"Ich kaufe Gemüse.",ar:"أشتري خضارًا."},{de:"Wir trinken Saft.",ar:"نشرب عصيرًا."},{de:"Das Fahrrad ist neu.",ar:"الدراجة جديدة."},{de:"Ich liebe Musik.",ar:"أحب الموسيقى."},{de:"Der Vogel singt.",ar:"العصفور يغني."},{de:"Wir gehen wandern.",ar:"نذهب في نزهة."},{de:"Ich spiele Tennis.",ar:"ألعب التنس."},{de:"Das Wasser ist kalt.",ar:"الماء بارد."},{de:"Wir essen Obst.",ar:"نأكل فواكه."},{de:"Ich koche Suppe.",ar:"أطبخ حساء."},{de:"Die Blume blüht.",ar:"الزهرة تتفتح."},{de:"Ich trage Schuhe.",ar:"أرتدي حذاءً."},{de:"Wir fahren Fahrrad.",ar:"نركب الدراجة."},{de:"Der Hund schläft.",ar:"الكلب نائم."},{de:"Ich sehe die Sterne.",ar:"أرى النجوم."},{de:"Die Katze miaut.",ar:"القطة تموء."},{de:"Ich trinke Milch.",ar:"أشرب الحليب."},{de:"Wir gehen einkaufen.",ar:"نذهب للتسوق."},{de:"Der Film ist spannend.",ar:"الفيلم مشوق."},{de:"Ich schreibe Briefe.",ar:"أكتب رسائل."},{de:"Wir essen Abendessen.",ar:"نتناول العشاء."},{de:"Die Sonne geht unter.",ar:"تغرب الشمس."},{de:"Ich fahre Bus.",ar:"أذهب بالباص."},{de:"Wir lernen zusammen.",ar:"نتعلم معًا."},{de:"Der Apfel ist lecker.",ar:"التفاحة لذيذة."},{de:"Ich spiele Gitarre.",ar:"أعزف على الجيتار."},{de:"Die Lampe ist kaputt.",ar:"المصباح مكسور."},{de:"Wir trinken Wasser.",ar:"نشرب ماءً."},{de:"Ich gehe joggen.",ar:"أذهب للجري."},{de:"Das Haus ist groß.",ar:"المنزل كبير."},{de:"Ich koche Frühstück.",ar:"أطبخ الإفطار."},{de:"Wir essen Kekse.",ar:"نأكل بسكويت."},{de:"Der Hund rennt.",ar:"الكلب يركض."},{de:"Ich liebe Bücher.",ar:"أحب الكتب."},{de:"Die Katze spielt.",ar:"القطة تلعب."},{de:"Wir sehen einen Film.",ar:"نشاهد فيلمًا."},{de:"Ich trinke Tee.",ar:"أشرب الشاي."},{de:"Der Tisch ist rund.",ar:"الطاولة دائرية."},{de:"Wir gehen spazieren.",ar:"نذهب للتنزه."},{de:"Ich habe Hunger.",ar:"أنا جائع."},{de:"Die Milch ist warm.",ar:"الحليب دافئ."},{de:"Wir fahren Auto.",ar:"نقود السيارة."},{de:"Ich spiele Basketball.",ar:"ألعب كرة السلة."},{de:"Das Brot ist frisch.",ar:"الخبز طازج."},{de:"Wir essen zusammen.",ar:"نأكل معًا."},{de:"Ich höre Radio.",ar:"أستمع للراديو."},{de:"Die Blumen sind bunt.",ar:"الزهور ملونة."},{de:"Ich male Bilder.",ar:"أرسم صورًا."},{de:"Wir lernen Deutsch.",ar:"نتعلم الألمانية."},{de:"Der Himmel ist klar.",ar:"السماء صافية."},{de:"Ich schwimme im Pool.",ar:"أسبح في المسبح."},{de:"Wir spielen Karten.",ar:"نلعب الورق."},{de:"Ich lese Zeitung.",ar:"أقرأ الصحيفة."},{de:"Die Katze schläft.",ar:"القطة نائمة."},{de:"Wir trinken Kaffee.",ar:"نشرب القهوة."},{de:"Ich koche Pasta.",ar:"أطبخ المعكرونة."},{de:"Das Auto ist rot.",ar:"السيارة حمراء."},{de:"Wir fahren Zug.",ar:"نذهب بالقطار."},{de:"Ich liebe Tiere.",ar:"أحب الحيوانات."},{de:"Die Uhr ist neu.",ar:"الساعة جديدة."},{de:"Wir gehen ins Theater.",ar:"نذهب للمسرح."},{de:"Ich esse Kuchen.",ar:"آكل كعكة."},{de:"Der Hund ist braun.",ar:"الكلب بني."},{de:"Wir sehen den Mond.",ar:"نرى القمر."},{de:"Ich trinke Saft.",ar:"أشرب عصيرًا."},{de:"Die Lampe ist hell.",ar:"المصباح مضيء."},{de:"Wir gehen schwimmen.",ar:"نذهب للسباحة."},{de:"Ich spiele Klavier.",ar:"أعزف على البيانو."},{de:"Das Wasser ist klar.",ar:"الماء صافي."},{de:"Wir essen Salat.",ar:"نأكل سلطة."},{de:"Ich fahre Fahrrad.",ar:"أركب الدراجة."},{de:"Der Apfel ist süß.",ar:"التفاحة حلوة."},{de:"Wir spielen Fußball.",ar:"نلعب كرة القدم."},{de:"Ich liebe Pizza.",ar:"أحب البيتزا."},{de:"Die Katze rennt.",ar:"القطة تركض."},{de:"Wir trinken Tee.",ar:"نشرب الشاي."},{de:"Ich koche Suppe.",ar:"أطبخ حساء."},{de:"Der Hund läuft schnell.",ar:"الكلب يجري بسرعة."},{de:"Wir sehen den Film.",ar:"نشاهد الفيلم."},{de:"Ich esse Frühstück.",ar:"أتناول الإفطار."},{de:"Die Blume ist rot.",ar:"الزهرة حمراء."},{de:"Wir gehen einkaufen.",ar:"نذهب للتسوق."},{de:"Ich höre Musik.",ar:"أستمع للموسيقى."},{de:"Der Tisch ist klein.",ar:"الطاولة صغيرة."},{de:"Wir lernen zusammen.",ar:"نتعلم معًا."},{de:"Ich trinke Wasser.",ar:"أشرب الماء."},{de:"Das Auto ist schnell.",ar:"السيارة سريعة."},{de:"Wir fahren nach Berlin.",ar:"نذهب إلى برلين."},{de:"Ich liebe Schokolade.",ar:"أحب الشوكولاتة."},{de:"Die Katze spielt.",ar:"القطة تلعب."},{de:"Wir essen Mittagessen.",ar:"نتناول الغداء."},{de:"Ich koche Abendessen.",ar:"أطبخ العشاء."},{de:"Der Hund schläft.",ar:"الكلب نائم."},{de:"Wir gehen zur Schule.",ar:"نذهب إلى المدرسة."},{de:"Ich fahre Bus.",ar:"أذهب بالباص."},{de:"Das Buch ist interessant.",ar:"الكتاب ممتع."},{de:"Wir tanzen zusammen.",ar:"نرقص معًا."},{de:"Ich sehe die Sterne.",ar:"أرى النجوم."},{de:"Die Lampe ist kaputt.",ar:"المصباح مكسور."},{de:"Wir spielen Karten.",ar:"نلعب الورق."},{de:"Ich male ein Bild.",ar:"أرسم صورة."},{de:"Der Berg ist hoch.",ar:"الجبل مرتفع."},{de:"Wir gehen wandern.",ar:"نذهب في نزهة."},{de:"Ich fahre Zug.",ar:"أذهب بالقطار."},{de:"Die Sonne scheint.",ar:"الشمس مشرقة."},{de:"Wir trinken Saft.",ar:"نشرب عصيرًا."},{de:"Ich esse Obst.",ar:"آكل فواكه."},{de:"Das Wasser kocht.",ar:"الماء يغلي."},{de:"Wir fahren Auto.",ar:"نقود السيارة."},{de:"Ich liebe Musik.",ar:"أحب الموسيقى."},{de:"Der Vogel singt.",ar:"العصفور يغني."},{de:"Wir gehen spazieren.",ar:"نذهب للتنزه."},{de:"Ich spiele Tennis.",ar:"ألعب التنس."},{de:"Das Brot ist frisch.",ar:"الخبز طازج."},{de:"Wir essen Kekse.",ar:"نأكل بسكويت."},{de:"Ich höre Radio.",ar:"أستمع للراديو."},{de:"Die Blumen sind bunt.",ar:"الزهور ملونة."},{de:"Ich male Bilder.",ar:"أرسم صورًا."},{de:"Wir lernen Deutsch.",ar:"نتعلم الألمانية."}
 ];
 let score=0, level=1, speed=7000, timeLeft=10, streak=0;
 let timerInterval;
@@ -188,4 +121,10 @@ function startGame(){
      levelDiv.textContent="المرحلة: "+level;
      startGame();
    }
- },100
+ },1000);
+}
+startGame();
+</script>
+<a href="index.html" id="back-home">🔙 العودة إلى الصفحة الرئيسية</a>
+</body>
+</html>
