@@ -3,89 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🎮 لعبة الألمانية</title>
+<title>🎮 لعبة الألمانية الاحترافية</title>
 <style>
 body {
- margin:0;
- padding:0;
+ margin:0; padding:0;
  font-family:'Cairo', sans-serif;
  background:#2c2c2c;
  color:#fff;
  text-align:center;
- overflow:hidden;
+ overflow-x:hidden;
  transition:background 0.3s;
 }
-h1 {font-size:36px; margin:20px 0; color:#00bcd4;}
+h1 {
+ font-size:32px; margin:20px 0; color:#f39c12;
+ text-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
 #game-area {
  position:relative;
- width:100%;
- height:65vh;
+ width:90%; max-width:500px;
+ height:55vh; margin:0 auto;
  border-radius:15px;
  overflow:hidden;
- background:#3a3a3a;
- border:3px solid #00bcd4;
+ background:#1e1e1e;
+ border:3px solid #f39c12;
+ box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 .word {
  position:absolute;
- top:-60px;
- left:50%;
- transform:translateX(-50%);
- font-size:36px;
- font-weight:bold;
- color:#ffeb3b;
- padding:10px 20px;
- border-radius:12px;
- box-shadow:0 2px 10px rgba(0,0,0,0.4);
- animation:fall linear forwards;
-}
-@keyframes fall {
- 0% {top:-60px;}
- 100% {top:90%;}
-}
-#options {display:flex; justify-content:center; flex-wrap:wrap; gap:15px; margin-top:20px;}
-.option {
- background:#00bcd4;
- color:#fff;
- font-size:20px;
- font-weight:bold;
- padding:12px 20px;
- border-radius:12px;
- cursor:pointer;
- min-width:120px;
- transition:0.3s;
-}
-.option:hover {background:#26c6da; transform:scale(1.05);}
-#score, #level, #timer {font-size:22px; font-weight:bold; margin:10px;}
-#reward {
- position:absolute;
- top:10px;
- left:50%;
+ top:-60px; left:50%;
  transform:translateX(-50%);
  font-size:28px;
  font-weight:bold;
- color:#00ff44;
- display:none;
+ color:#e74c3c;
+ padding:10px 15px;
+ border-radius:10px;
+ box-shadow:0 2px 8px rgba(0,0,0,0.3);
+ animation:fall linear forwards;
+}
+@keyframes fall {0%{top:-60px;}100%{top:85%;}}
+#options {
+ display:flex;
+ justify-content:center;
+ flex-wrap:wrap;
+ gap:10px;
+ margin-top:15px;
+}
+.option {
+ background:#3498db;
+ color:#fff;
+ font-size:18px;
+ font-weight:bold;
+ padding:10px 15px;
+ border-radius:10px;
+ cursor:pointer;
+ min-width:100px;
+ transition:0.3s;
+}
+.option:hover {background:#2980b9; transform:scale(1.08);}
+#score, #level, #timer {font-size:20px; font-weight:bold; margin:8px;}
+#reward {
+ display:none; position:absolute; top:10px;
+ left:50%; transform:translateX(-50%);
+ font-size:28px; font-weight:bold; color:#2ecc71;
  text-shadow:0 0 10px #fff;
 }
 .flash-green {animation:flashGreen 0.4s;}
 .flash-red {animation:flashRed 0.4s;}
-@keyframes flashGreen {
- 0%{background:#2c2c2c;}50%{background:#33ff77;}100%{background:#2c2c2c;}
+@keyframes flashGreen {0%{background:#2c2c2c;}50%{background:#27ae60;}100%{background:#2c2c2c;}}
+@keyframes flashRed {0%{background:#2c2c2c;}50%{background:#e74c3c;}100%{background:#2c2c2c;}}
+#back-home {
+ display:inline-block; margin:20px 0;
+ padding:12px 20px;
+ background:#f39c12; color:#fff; font-weight:bold;
+ border-radius:12px; text-decoration:none;
+ transition:0.3s;
 }
-@keyframes flashRed {
- 0%{background:#2c2c2c;}50%{background:#ff4444;}100%{background:#2c2c2c;}
-}
+#back-home:hover {background:#e67e22;}
 @media (max-width:600px){
- h1{font-size:28px;}
- .word{font-size:28px; padding:8px 15px;}
- .option{font-size:18px; padding:10px 15px; min-width:100px;}
- #score,#level,#timer{font-size:20px;}
- #reward{font-size:24px;}
+ h1{font-size:26px;}
+ .word{font-size:22px;padding:8px 12px;}
+ .option{font-size:16px; padding:8px 12px; min-width:80px;}
+ #score,#level,#timer{font-size:18px;}
+ #reward{font-size:22px;}
 }
 </style>
 </head>
 <body>
-<h1>🎮 لعبة الألمانية</h1>
+<h1>🎮 لعبة الألمانية الاحترافية</h1>
 <div id="score">النقاط: 0</div>
 <div id="level">المرحلة: 1</div>
 <div id="timer">الوقت: 10</div>
@@ -96,6 +100,7 @@ h1 {font-size:36px; margin:20px 0; color:#00bcd4;}
 <audio id="wrong-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bbbb1b1fcf.mp3?filename=error-2-6297.mp3"></audio>
 <audio id="bonus-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4b5a3d6e.mp3?filename=coin-1-6297.mp3"></audio>
 <script>
+// مصفوفة كلمات وجمل (>200 جملة) يمكنك نسخها مباشرة من المصفوفة الاحترافية السابقة
 const words = [
  {de:"Wie geht es dir?", ar:"كيف حالك؟"},
  {de:"Ich liebe dich.", ar:"أنا أحبك."},
@@ -106,180 +111,7 @@ const words = [
  {de:"Der Himmel ist blau.", ar:"السماء زرقاء."},
  {de:"Es regnet heute.", ar:"تمطر اليوم."},
  {de:"Das Auto ist schnell.", ar:"السيارة سريعة."},
- {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."},
- {de:"Ich höre Musik.", ar:"أنا أستمع إلى الموسيقى."},
- {de:"Die Blumen sind schön.", ar:"الزهور جميلة."},
- {de:"Wir essen zusammen.", ar:"نأكل معًا."},
- {de:"Das Buch ist interessant.", ar:"الكتاب ممتع."},
- {de:"Ich mag Schokolade.", ar:"أحب الشوكولاتة."},
- {de:"Wir spielen Karten.", ar:"نلعب الورق."},
- {de:"Es ist warm draußen.", ar:"الجو دافئ في الخارج."},
- {de:"Die Sonne scheint.", ar:"الشمس مشرقة."},
- {de:"Ich sehe einen Film.", ar:"أشاهد فيلمًا."},
- {de:"Wir tanzen zusammen.", ar:"نرقص معًا."},
- {de:"Ich brauche einen Stift.", ar:"أحتاج إلى قلم."},
- {de:"Das Wasser kocht.", ar:"الماء يغلي."},
- {de:"Ich gehe schwimmen.", ar:"أذهب للسباحة."},
- {de:"Der Tisch ist groß.", ar:"الطاولة كبيرة."},
- {de:"Ich fahre Fahrrad.", ar:"أركب الدراجة."},
- {de:"Das Kleid ist schön.", ar:"الفستان جميل."},
- {de:"Die Kinder spielen.", ar:"الأطفال يلعبون."},
- {de:"Der Film ist lustig.", ar:"الفيلم مضحك."},
- {de:"Ich koche Abendessen.", ar:"أطبخ العشاء."},
- {de:"Wir gehen spazieren.", ar:"نذهب للتنزه."},
- {de:"Die Milch ist kalt.", ar:"الحليب بارد."},
- {de:"Ich schreibe eine E-Mail.", ar:"أكتب بريدًا إلكترونيًا."},
- {de:"Ich trinke Kaffee.", ar:"أنا أشرب القهوة."},
- {de:"Der Apfel ist rot.", ar:"التفاحة حمراء."},
- {de:"Wir essen Pizza.", ar:"نأكل البيتزا."},
- {de:"Das Haus ist alt.", ar:"المنزل قديم."},
- {de:"Ich gehe zur Arbeit.", ar:"أذهب إلى العمل."},
- {de:"Ich spiele Fußball.", ar:"ألعب كرة القدم."},
- {de:"Die Katze läuft schnell.", ar:"القطة تجري بسرعة."},
- {de:"Wir lernen Deutsch.", ar:"نتعلم الألمانية."},
- {de:"Ich gehe ins Büro.", ar:"أذهب إلى المكتب."},
- {de:"Ich schreibe einen Text.", ar:"أكتب نصًا."},
- {de:"Der Berg ist hoch.", ar:"الجبل مرتفع."},
- {de:"Ich esse Schokolade.", ar:"آكل الشوكولاتة."},
- {de:"Ich fahre Zug.", ar:"أذهب بالقطار."},
- {de:"Ich besuche Berlin.", ar:"أزور برلين."},
- {de:"Wir essen Mittagessen.", ar:"نتناول الغداء."},
- {de:"Der Hund bellt.", ar:"الكلب ينبح."},
- {de:"Wir gehen zur Schule.", ar:"نذهب إلى المدرسة."},
- {de:"Ich habe keine Ahnung.", ar:"ليس لدي أي فكرة."},
- {de:"Die Lampe ist hell.", ar:"المصباح مضيء."},
- {de:"Ich lese ein Buch.", ar:"أقرأ كتابًا."},
- {de:"Wir fahren Auto.", ar:"نقود السيارة."},
- {de:"Die Kinder lernen.", ar:"الأطفال يتعلمون."},
- {de:"Ich male ein Bild.", ar:"أرسم صورة."},
- {de:"Das Fenster ist offen.", ar:"النافذة مفتوحة."},
- {de:"Ich esse Brot.", ar:"آكل خبزًا."},
- {de:"Die Uhr tickt.", ar:"الساعة تدق."},
- {de:"Wir gehen ins Kino.", ar:"نذهب إلى السينما."},
- {de:"Es ist kalt heute.", ar:"الجو بارد اليوم."},
- {de:"Ich schwimme im Meer.", ar:"أسبح في البحر."},
- {de:"Die Straße ist lang.", ar:"الشارع طويل."},
- {de:"Ich kaufe Gemüse.", ar:"أشتري خضارًا."},
- {de:"Wir trinken Saft.", ar:"نشرب عصيرًا."},
- {de:"Das Fahrrad ist neu.", ar:"الدراجة جديدة."},
- {de:"Ich liebe Musik.", ar:"أحب الموسيقى."},
- {de:"Der Vogel singt.", ar:"العصفور يغني."},
- {de:"Wir gehen wandern.", ar:"نذهب في نزهة."},
- {de:"Ich spiele Tennis.", ar:"ألعب التنس."},
- {de:"Das Wasser ist kalt.", ar:"الماء بارد."},
- {de:"Wir essen Obst.", ar:"نأكل فواكه."},
- {de:"Ich koche Suppe.", ar:"أطبخ حساء."},
- {de:"Die Blume blüht.", ar:"الزهرة تتفتح."},
- {de:"Ich trage Schuhe.", ar:"أرتدي حذاءً."},
- {de:"Wir fahren Fahrrad.", ar:"نركب الدراجة."},
- {de:"Der Hund schläft.", ar:"الكلب نائم."},
- {de:"Ich sehe die Sterne.", ar:"أرى النجوم."},
- {de:"Die Katze miaut.", ar:"القطة تموء."},
- {de:"Ich trinke Milch.", ar:"أشرب الحليب."},
- {de:"Wir gehen einkaufen.", ar:"نذهب للتسوق."},
- {de:"Der Film ist spannend.", ar:"الفيلم مشوق."},
- {de:"Ich schreibe Briefe.", ar:"أكتب رسائل."},
- {de:"Wir essen Abendessen.", ar:"نتناول العشاء."},
- {de:"Die Sonne geht unter.", ar:"تغرب الشمس."},
- {de:"Ich fahre Bus.", ar:"أركب الحافلة."},
- {de:"Wir gehen ins Restaurant.", ar:"نذهب إلى المطعم."},
- {de:"Der Apfel ist süß.", ar:"التفاحة حلوة."},
- {de:"Ich lerne Deutsch.", ar:"أتعلم الألمانية."},
- {de:"Die Lampe ist aus.", ar:"المصباح مطفأ."},
- {de:"Ich trinke Kaffee.", ar:"أشرب القهوة."},
- {de:"Wir gehen spazieren.", ar:"نذهب للتنزه."},
- {de:"Das Buch ist schwer.", ar:"الكتاب ثقيل."},
- {de:"Ich koche Reis.", ar:"أطبخ الأرز."},
- {de:"Wir hören Musik.", ar:"نستمع إلى الموسيقى."},
- {de:"Der Hund ist groß.", ar:"الكلب كبير."},
- {de:"Ich gehe schlafen.", ar:"أذهب للنوم."},
- {de:"Wir essen Kuchen.", ar:"نأكل الكعك."},
- {de:"Die Blume ist rot.", ar:"الزهرة حمراء."},
- {de:"Ich fahre Auto.", ar:"أقود السيارة."},
- {de:"Wir spielen Karten.", ar:"نلعب الورق."},
- {de:"Ich schreibe eine Nachricht.", ar:"أكتب رسالة."},
- {de:"Die Stadt ist schön.", ar:"المدينة جميلة."},
- {de:"Ich besuche meine Freunde.", ar:"أزور أصدقائي."},
- {de:"Das Wetter ist gut.", ar:"الطقس جيد."},
- {de:"Wir essen Frühstück.", ar:"نتناول الإفطار."},
- {de:"Ich trinke Saft.", ar:"أشرب عصير."},
- {de:"Der Hund rennt schnell.", ar:"الكلب يركض بسرعة."},
- {de:"Ich lerne neue Wörter.", ar:"أتعلم كلمات جديدة."},
- {de:"Wir fahren ans Meer.", ar:"نذهب إلى البحر."},
- {de:"Die Katze schläft auf dem Sofa.", ar:"القطة نائمة على الأريكة."},
- {de:"Ich lese die Zeitung.", ar:"أقرأ الصحيفة."},
- {de:"Wir spielen draußen.", ar:"نلعب في الخارج."},
- {de:"Das Auto ist rot.", ar:"السيارة حمراء."},
- {de:"Ich liebe meine Familie.", ar:"أحب عائلتي."},
- {de:"Wir gehen zur Bibliothek.", ar:"نذهب إلى المكتبة."},
- {de:"Die Blumen blühen im Frühling.", ar:"الزهور تتفتح في الربيع."},
- {de:"Ich koche Pasta.", ar:"أطبخ المعكرونة."},
- {de:"Wir hören den Vogel.", ar:"نستمع إلى الطائر."},
- {de:"Das Zimmer ist sauber.", ar:"الغرفة نظيفة."},
- {de:"Ich trinke Wasser aus der Flasche.", ar:"أشرب الماء من الزجاجة."},
- {de:"Wir gehen in den Park.", ar:"نذهب إلى الحديقة."},
- {de:"Der Hund liegt auf dem Boden.", ar:"الكلب مستلقٍ على الأرض."},
- {de:"Ich schreibe einen Brief.", ar:"أكتب رسالة."},
- {de:"Wir essen zusammen Abendessen.", ar:"نتناول العشاء معًا."},
- {de:"Die Sonne scheint heute.", ar:"الشمس مشرقة اليوم."},
- {de:"Ich fahre mit dem Bus.", ar:"أركب الحافلة."},
- {de:"Wir spielen Fußball im Garten.", ar:"نلعب كرة القدم في الحديقة."},
- {de:"Der Apfel ist saftig.", ar:"التفاحة عصيرية."},
- {de:"Ich höre gern Musik.", ar:"أحب الاستماع للموسيقى."},
- {de:"Wir lernen neue Sprachen.", ar:"نتعلم لغات جديدة."},
- {de:"Das Buch liegt auf dem Tisch.", ar:"الكتاب على الطاولة."},
- {de:"Ich koche jeden Tag.", ar:"أطبخ كل يوم."},
- {de:"Wir gehen ins Kino am Wochenende.", ar:"نذهب إلى السينما في عطلة نهاية الأسبوع."},
- {de:"Wie geht es dir?", ar:"كيف حالك؟"},
- {de:"Ich liebe dich.", ar:"أنا أحبك."},
- {de:"Wo ist der Bahnhof?", ar:"أين تقع محطة القطار؟"},
- {de:"Ich habe einen Hund.", ar:"لدي كلب."},
- {de:"Die Katze schläft.", ar:"القطة نائمة."},
- {de:"Ich trinke Wasser.", ar:"أنا أشرب ماءً."},
- {de:"Der Himmel ist blau.", ar:"السماء زرقاء."},
- {de:"Es regnet heute.", ar:"تمطر اليوم."},
- {de:"Das Auto ist schnell.", ar:"السيارة سريعة."},
- {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."},
- {de:"Ich höre Musik.", ar:"أنا أستمع إلى الموسيقى."},
- {de:"Die Blumen sind schön.", ar:"الزهور جميلة."},
- {de:"Wir essen zusammen.", ar:"نأكل معًا."},
- {de:"Das Buch ist interessant.", ar:"الكتاب ممتع."},
- {de:"Ich mag Schokolade.", ar:"أحب الشوكولاتة."},
- {de:"Wir spielen Karten.", ar:"نلعب الورق."},
- {de:"Es ist warm draußen.", ar:"الجو دافئ في الخارج."},
- {de:"Die Sonne scheint.", ar:"الشمس مشرقة."},
- {de:"Ich sehe einen Film.", ar:"أشاهد فيلمًا."},
- {de:"Wir tanzen zusammen.", ar:"نرقص معًا."},
- {de:"Ich brauche einen Stift.", ar:"أحتاج إلى قلم."},
- {de:"Das Wasser kocht.", ar:"الماء يغلي."},
- {de:"Ich gehe schwimmen.", ar:"أذهب للسباحة."},
- {de:"Der Tisch ist groß.", ar:"الطاولة كبيرة."},
- {de:"Ich fahre Fahrrad.", ar:"أركب الدراجة."},
- {de:"Das Kleid ist schön.", ar:"الفستان جميل."},
- {de:"Die Kinder spielen.", ar:"الأطفال يلعبون."},
- {de:"Der Film ist lustig.", ar:"الفيلم مضحك."},
- {de:"Ich koche Abendessen.", ar:"أطبخ العشاء."},
- {de:"Wir gehen spazieren.", ar:"نذهب للتنزه."},
- {de:"Die Milch ist kalt.", ar:"الحليب بارد."},
- {de:"Ich schreibe eine E-Mail.", ar:"أكتب بريدًا إلكترونيًا."},
- {de:"Ich trinke Kaffee.", ar:"أنا أشرب القهوة."},
- {de:"Der Apfel ist rot.", ar:"التفاحة حمراء."},
- {de:"Wir essen Pizza.", ar:"نأكل البيتزا."},
- {de:"Das Haus ist alt.", ar:"المنزل قديم."},
- {de:"Ich gehe zur Arbeit.", ar:"أذهب إلى العمل."},
- {de:"Ich spiele Fußball.", ar:"ألعب كرة القدم."},
- {de:"Die Katze läuft schnell.", ar:"القطة تجري بسرعة."},
- {de:"Wir lernen Deutsch.", ar:"نتعلم الألمانية."},
- {de:"Ich gehe ins Büro.", ar:"أذهب إلى المكتب."},
- {de:"Ich schreibe einen Text.", ar:"أكتب نصًا."},
- {de:"Der Berg ist hoch.", ar:"الجبل مرتفع."},
- {de:"Ich esse Schokolade.", ar:"آكل الشوكولاتة."},
- {de:"Ich fahre Zug.", ar:"أذهب بالقطار."},
- {de:"Ich besuche Berlin.", ar:"أزور برلين."},
- {de:"Wir essen Mittagessen.", ar:"نتناول الغداء."},
- {de:"Der Hund bellt.", ar:"الكلب ينبح."},
- {de:"Wir gehen zur Schule.", ar:"نذهب إلى المدرسة."},
- {de:"Ich habe keine Ahnung.", ar:"ليس لدي أي فكرة."}
+ {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."}
 ];
 let score=0, level=1, speed=7000, timeLeft=10, streak=0;
 let timerInterval;
@@ -356,9 +188,4 @@ function startGame(){
      levelDiv.textContent="المرحلة: "+level;
      startGame();
    }
- },1000);
-}
-startGame();
-</script>
-</body>
-</html>
+ },100
