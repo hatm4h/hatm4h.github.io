@@ -7,16 +7,69 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <style>
-body {font-family: 'Cairo', sans-serif; margin:0; padding:0; background:#f4f6fb; color:#333; text-align:center;}
-header {background: linear-gradient(135deg,#004e92,#000428); color:white; padding:60px 20px; box-shadow:0 4px 10px rgba(0,0,0,0.25);}
-header h1 {font-size:40px; margin:0 0 15px 0; font-weight:700;}
-header p {font-size:22px; margin:0; opacity:0.9;}
-main {padding:60px 20px; display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
-.section {background:white; border-radius:20px; box-shadow:0 6px 15px rgba(0,0,0,0.15); width:250px; padding:40px 25px; transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.section:hover {transform: translateY(-8px) scale(1.02); box-shadow:0 12px 20px rgba(0,0,0,0.25);}
-.section a {text-decoration:none; color:#004e92; font-weight:bold; font-size:22px; display:block; margin-top:15px;}
-.section-icon {font-size:60px; margin-bottom:20px; color:#004e92;}
-@media (max-width:600px){header h1{font-size:34px;} header p{font-size:20px;} .section{width:90%; padding:35px;} .section a{font-size:26px;} .section-icon{font-size:70px;}}
+   body {
+     font-family: 'Cairo', sans-serif;
+     margin:0;
+     padding:0;
+     background:#f4f6fb;
+     color:#333;
+     text-align:center;
+   }
+   header {
+     background: linear-gradient(135deg,#004e92,#000428);
+     color:white;
+     padding:60px 20px;
+     box-shadow:0 4px 10px rgba(0,0,0,0.25);
+   }
+   header h1 {
+     font-size:40px;
+     margin:0 0 15px 0;
+     font-weight:700;
+   }
+   header p {
+     font-size:22px;
+     margin:0;
+     opacity:0.9;
+   }
+   main {
+     padding:60px 20px;
+     display:flex;
+     flex-wrap:wrap;
+     justify-content:center;
+     gap:30px;
+   }
+   .section {
+     background:white;
+     border-radius:20px;
+     box-shadow:0 6px 15px rgba(0,0,0,0.15);
+     width:250px;
+     padding:40px 25px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .section:hover {
+     transform: translateY(-8px) scale(1.02);
+     box-shadow:0 12px 20px rgba(0,0,0,0.25);
+   }
+   .section a {
+     text-decoration:none;
+     color:#004e92;
+     font-weight:bold;
+     font-size:22px;
+     display:block;
+     margin-top:15px;
+   }
+   .section-icon {
+     font-size:60px;
+     margin-bottom:20px;
+     color:#004e92;
+   }
+   @media (max-width:600px){
+     header h1{font-size:34px;}
+     header p{font-size:20px;}
+     .section{width:90%; padding:35px;}
+     .section a{font-size:26px;}
+     .section-icon{font-size:70px;}
+   }
 </style>
 </head>
 <body>
@@ -25,16 +78,34 @@ main {padding:60px 20px; display:flex; flex-wrap:wrap; justify-content:center; g
 <p>اختر القسم الذي تريده وابدأ رحلتك التعليمية بسهولة ووضوح</p>
 </header>
 <main>
-<div class="section"><div class="section-icon"><i class="fas fa-book"></i></div><a href="words.html" aria-label="مفردات أساسية">مفردات أساسية</a></div>
-<div class="section"><div class="section-icon"><i class="fas fa-pencil-alt"></i></div><a href="words-examples.htm" aria-label="جمل مع أمثلة">جمل مع أمثلة</a></div>
-<div class="section"><div class="section-icon"><i class="fas fa-envelope-open-text"></i></div><a href="a1_emails.html" aria-label="إيميلات تدريبية">إيميلات تدريبية</a></div>
-<div class="section"><div class="section-icon"><i class="fas fa-language"></i></div><a href="vocabulary.html" aria-label="مفردات متقدمة">مفردات متقدمة</a></div>
-<div class="section"><div class="section-icon"><i class="fas fa-question-circle"></i></div><a href="quizzes.html" aria-label="اختبارات قصيرة">اختبارات قصيرة</a></div>
+<div class="section">
+<div class="section-icon"><i class="fas fa-book"></i></div>
+<a href="words.html" aria-label="مفردات أساسية">مفردات أساسية</a>
+</div>
+<div class="section">
+<div class="section-icon"><i class="fas fa-pencil-alt"></i></div>
+<a href="words-examples.html" aria-label="جمل مع أمثلة">جمل مع أمثلة</a>
+</div>
+<div class="section">
+<div class="section-icon"><i class="fas fa-envelope-open-text"></i></div>
+<a href="a1_emails.html" aria-label="إيميلات تدريبية">إيميلات تدريبية</a>
+</div>
+<div class="section">
+<div class="section-icon"><i class="fas fa-language"></i></div>
+<a href="vocabulary.html" aria-label="مفردات متقدمة">مفردات متقدمة</a>
+</div>
+<div class="section">
+<div class="section-icon"><i class="fas fa-question-circle"></i></div>
+<a href="quizzes.html" aria-label="اختبارات قصيرة">اختبارات قصيرة</a>
+</div>
+<!-- 🎮 قسم اللعبة -->
+<div class="section">
+<div class="section-icon"><i class="fas fa-gamepad"></i></div>
+<a href="game.html" aria-label="اللعبة التعليمية">اللعبة التعليمية</a>
+</div>
 </main>
 </body>
 </html>
-
-
 
 
 
