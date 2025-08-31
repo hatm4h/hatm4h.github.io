@@ -2,101 +2,93 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>لعبة تعلم الألمانية 🎮</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎮 لعبة الألمانية مع المكافآت</title>
 <style>
- body {
-   margin:0;
-   padding:0;
-   font-family:'Cairo', sans-serif;
-   background: linear-gradient(135deg, #1d2b64, #f8cdda);
-   color:#fff;
-   overflow:hidden;
-   text-align:center;
- }
- h1 {
-   margin:20px;
-   font-size:32px;
- }
- #game-area {
-   position:relative;
-   width:100%;
-   height:70vh;
-   overflow:hidden;
-   border:3px solid #fff;
-   border-radius:15px;
-   background:rgba(0,0,0,0.3);
- }
- .word {
-   position:absolute;
-   top:0;
-   left:50%;
-   transform:translateX(-50%);
-   font-size:28px;
-   font-weight:bold;
-   color:#ffeb3b;
-   animation: fall linear;
- }
- @keyframes fall {
-   from {top:-50px;}
-   to {top:90%;}
- }
- #options {
-   margin-top:20px;
-   display:flex;
-   justify-content:center;
-   flex-wrap:wrap;
-   gap:15px;
- }
- .option {
-   background:#fff;
-   color:#333;
-   padding:15px 25px;
-   border-radius:10px;
-   cursor:pointer;
-   font-size:22px;
-   font-weight:bold;
-   transition:0.3s;
-   min-width:120px;
- }
- .option:hover {
-   background:#ffd54f;
-   transform:scale(1.1);
- }
- #score {
-   margin:20px;
-   font-size:26px;
-   font-weight:bold;
- }
- /* للهواتف */
- @media (max-width:600px){
-   h1 {font-size:26px;}
-   .word {font-size:24px;}
-   .option {font-size:20px; padding:12px 18px;}
-   #score {font-size:22px;}
- }
- /* اهتزاز عند الخطأ */
- .shake {
-   animation: shake 0.4s;
- }
- @keyframes shake {
-   0% { transform: translate(0px, 0px); }
-   25% { transform: translate(-10px, 0px); }
-   50% { transform: translate(10px, 0px); }
-   75% { transform: translate(-10px, 0px); }
-   100% { transform: translate(0px, 0px); }
- }
+body {
+ margin:0;
+ padding:0;
+ font-family:'Cairo', sans-serif;
+ background: linear-gradient(135deg,#1d2b64,#f8cdda);
+ color:#fff;
+ text-align:center;
+ overflow:hidden;
+}
+h1 {font-size:36px; margin:20px 0;}
+#game-area {
+ position:relative;
+ width:100%;
+ height:65vh;
+ border-radius:15px;
+ overflow:hidden;
+ background:rgba(0,0,0,0.2);
+ border:3px solid #fff;
+}
+.word {
+ position:absolute;
+ top:-60px;
+ left:50%;
+ transform:translateX(-50%);
+ font-size:34px;
+ font-weight:bold;
+ color:#ffeb3b;
+ padding:10px 20px;
+ border-radius:12px;
+ box-shadow:0 2px 10px rgba(0,0,0,0.3);
+ animation:fall linear forwards;
+}
+@keyframes fall {
+ 0% {top:-60px;}
+ 100% {top:90%;}
+}
+#options {display:flex; justify-content:center; flex-wrap:wrap; gap:15px; margin-top:20px;}
+.option {
+ background:#fff;
+ color:#333;
+ font-size:24px;
+ font-weight:bold;
+ padding:15px 25px;
+ border-radius:12px;
+ cursor:pointer;
+ min-width:140px;
+ transition:0.3s;
+}
+.option:hover {background:#ffd54f; transform:scale(1.1);}
+#score, #level, #timer {font-size:26px; font-weight:bold; margin:10px;}
+.shake {animation:shake 0.4s;}
+@keyframes shake {0%{transform:translateX(0);}25%{transform:translateX(-12px);}50%{transform:translateX(12px);}75%{transform:translateX(-12px);}100%{transform:translateX(0);}}
+#reward {
+ position:absolute;
+ top:10px;
+ left:50%;
+ transform:translateX(-50%);
+ font-size:30px;
+ font-weight:bold;
+ color:#00ff00;
+ display:none;
+ text-shadow: 0 0 10px #fff;
+}
+@media (max-width:600px){
+ h1{font-size:28px;}
+ .word{font-size:28px; padding:8px 15px;}
+ .option{font-size:20px; padding:12px 20px; min-width:120px;}
+ #score,#level,#timer{font-size:22px;}
+ #reward{font-size:24px;}
+}
 </style>
 </head>
 <body>
-<h1>🎮 لعبة تعلم الألمانية</h1>
-<div id="score">النتيجة: 0</div>
+<h1>🎮 لعبة الألمانية مع المكافآت</h1>
+<div id="score">النقاط: 0</div>
+<div id="level">المرحلة: 1</div>
+<div id="timer">الوقت: 10</div>
 <div id="game-area"></div>
 <div id="options"></div>
-<!-- أصوات -->
+<div id="reward">⭐ مكافأة! ⭐</div>
 <audio id="correct-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9b4f6dbb6e.mp3?filename=success-1-6297.mp3"></audio>
 <audio id="wrong-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_bbbb1b1fcf.mp3?filename=error-2-6297.mp3"></audio>
+<audio id="bonus-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4b5a3d6e.mp3?filename=coin-1-6297.mp3"></audio>
 <script>
-// الجمل (200+ جملة)
 const words = [
  {de:"Wie geht es dir?", ar:"كيف حالك؟"},
  {de:"Ich liebe dich.", ar:"أنا أحبك."},
@@ -107,101 +99,83 @@ const words = [
  {de:"Der Himmel ist blau.", ar:"السماء زرقاء."},
  {de:"Es regnet heute.", ar:"تمطر اليوم."},
  {de:"Das Auto ist schnell.", ar:"السيارة سريعة."},
- {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."},
- {de:"Ich höre Musik.", ar:"أنا أستمع إلى الموسيقى."},
- {de:"Die Blumen sind schön.", ar:"الزهور جميلة."},
- {de:"Wir essen zusammen.", ar:"نأكل معًا."},
- {de:"Das Buch ist interessant.", ar:"الكتاب ممتع."},
- {de:"Ich mag Schokolade.", ar:"أحب الشوكولاتة."},
- {de:"Wir spielen Karten.", ar:"نلعب الورق."},
- {de:"Es ist warm draußen.", ar:"الجو دافئ في الخارج."},
- {de:"Die Sonne scheint.", ar:"الشمس مشرقة."},
- {de:"Ich sehe einen Film.", ar:"أشاهد فيلمًا."},
- {de:"Wir tanzen zusammen.", ar:"نرقص معًا."},
- {de:"Ich brauche einen Stift.", ar:"أحتاج إلى قلم."},
- {de:"Das Wasser kocht.", ar:"الماء يغلي."},
- {de:"Ich gehe schwimmen.", ar:"أذهب للسباحة."},
- {de:"Der Tisch ist groß.", ar:"الطاولة كبيرة."},
- {de:"Ich fahre Fahrrad.", ar:"أركب الدراجة."},
- {de:"Das Kleid ist schön.", ar:"الفستان جميل."},
- {de:"Die Kinder spielen.", ar:"الأطفال يلعبون."},
- {de:"Der Film ist lustig.", ar:"الفيلم مضحك."},
- {de:"Ich koche Abendessen.", ar:"أطبخ العشاء."},
- {de:"Wir gehen spazieren.", ar:"نذهب للتنزه."},
- {de:"Die Milch ist kalt.", ar:"الحليب بارد."},
- {de:"Ich schreibe eine E-Mail.", ar:"أكتب بريدًا إلكترونيًا."},
- {de:"Ich trinke Kaffee.", ar:"أنا أشرب القهوة."},
- {de:"Der Apfel ist rot.", ar:"التفاحة حمراء."},
- {de:"Wir essen Pizza.", ar:"نأكل البيتزا."},
- {de:"Das Haus ist alt.", ar:"المنزل قديم."},
- {de:"Ich gehe zur Arbeit.", ar:"أذهب إلى العمل."},
- {de:"Ich spiele Fußball.", ar:"ألعب كرة القدم."},
- {de:"Die Katze läuft schnell.", ar:"القطة تجري بسرعة."},
- {de:"Wir lernen Deutsch.", ar:"نتعلم الألمانية."},
- {de:"Ich gehe ins Büro.", ar:"أذهب إلى المكتب."},
- {de:"Ich schreibe einen Text.", ar:"أكتب نصًا."},
- {de:"Der Berg ist hoch.", ar:"الجبل مرتفع."},
- {de:"Ich esse Schokolade.", ar:"آكل الشوكولاتة."},
- {de:"Ich fahre Zug.", ar:"أذهب بالقطار."},
- {de:"Ich besuche Berlin.", ar:"أزور برلين."},
- {de:"Wir essen Mittagessen.", ar:"نتناول الغداء."},
- {de:"Der Hund bellt.", ar:"الكلب ينبح."},
- {de:"Wir gehen zur Schule.", ar:"نذهب إلى المدرسة."},
- {de:"Ich habe keine Ahnung.", ar:"ليس لدي أي فكرة."},
- {de:"Der Tisch ist rund.", ar:"الطاولة دائرية."},
- {de:"Wir reisen nach Deutschland.", ar:"نسافر إلى ألمانيا."},
- {de:"Ich spiele Klavier.", ar:"ألعب البيانو."},
- {de:"Wir besuchen Freunde.", ar:"نزور الأصدقاء."},
- {de:"Der Film war spannend.", ar:"الفيلم كان مشوقًا."},
- {de:"Ich mag Tiere.", ar:"أنا أحب الحيوانات."},
- {de:"Wir gehen ins Theater.", ar:"نذهب إلى المسرح."},
- {de:"Die Stadt ist groß.", ar:"المدينة كبيرة."}
+ {de:"Wir fahren nach Berlin.", ar:"نحن ذاهبون إلى برلين."}
 ];
-let score=0;
-let speed=7000; // سرعة سقوط الجملة
+let score=0, level=1, speed=7000, timeLeft=10, streak=0;
+let timerInterval;
 const gameArea=document.getElementById("game-area");
 const optionsDiv=document.getElementById("options");
 const scoreDiv=document.getElementById("score");
+const levelDiv=document.getElementById("level");
+const timerDiv=document.getElementById("timer");
+const rewardDiv=document.getElementById("reward");
 const correctSound=document.getElementById("correct-sound");
 const wrongSound=document.getElementById("wrong-sound");
+const bonusSound=document.getElementById("bonus-sound");
 function startGame(){
- gameArea.innerHTML="";
- optionsDiv.innerHTML="";
+ clearInterval(timerInterval);
+ timeLeft=10;
+ timerDiv.textContent="الوقت: "+timeLeft;
  const word=words[Math.floor(Math.random()*words.length)];
+ gameArea.innerHTML="";
  const wordElem=document.createElement("div");
  wordElem.classList.add("word");
  wordElem.textContent=word.de;
  wordElem.style.animationDuration=(speed/1000)+"s";
  gameArea.appendChild(wordElem);
- // خيارات
  let answers=[word.ar];
  while(answers.length<3){
    let random=words[Math.floor(Math.random()*words.length)].ar;
    if(!answers.includes(random)) answers.push(random);
  }
  answers.sort(()=>Math.random()-0.5);
+ optionsDiv.innerHTML="";
  answers.forEach(ans=>{
    const btn=document.createElement("div");
    btn.classList.add("option");
    btn.textContent=ans;
    btn.onclick=()=>{
      if(ans===word.ar){
-       score++;
-       scoreDiv.textContent="النتيجة: "+score;
+       streak++;
+       score += streak; // النقاط تتضاعف حسب السلسلة
+       scoreDiv.textContent="النقاط: "+score;
        correctSound.play();
-       if(score%5===0 && speed>3000) speed-=500; // زيادة الصعوبة
+       if(streak%3===0){
+         rewardDiv.style.display="block";
+         bonusSound.play();
+         setTimeout(()=>rewardDiv.style.display="none",1000);
+         document.body.style.background="linear-gradient(135deg,#28a745,#c3e6cb)";
+         setTimeout(()=>document.body.style.background="linear-gradient(135deg,#1d2b64,#f8cdda)",500);
+       }
+       if(score%5===0 && speed>2500) speed-=500;
+       startGame();
      } else {
        wrongSound.play();
        document.body.classList.add("shake");
        setTimeout(()=>document.body.classList.remove("shake"),400);
-       score=0;
-       scoreDiv.textContent="النتيجة: "+score;
-       speed=7000; // إعادة السرعة
+       streak=0;
+       score=0; level=1; speed=7000;
+       scoreDiv.textContent="النقاط: "+score;
+       levelDiv.textContent="المرحلة: "+level;
+       startGame();
      }
-     startGame();
    };
    optionsDiv.appendChild(btn);
  });
+ timerInterval=setInterval(()=>{
+   timeLeft--;
+   timerDiv.textContent="الوقت: "+timeLeft;
+   if(timeLeft<=0){
+     clearInterval(timerInterval);
+     wrongSound.play();
+     document.body.classList.add("shake");
+     setTimeout(()=>document.body.classList.remove("shake"),400);
+     streak=0; score=0; level=1; speed=7000;
+     scoreDiv.textContent="النقاط: "+score;
+     levelDiv.textContent="المرحلة: "+level;
+     startGame();
+   }
+ },1000);
 }
 startGame();
 </script>
