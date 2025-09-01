@@ -16,7 +16,9 @@
      background:#f4f6fb;
      color:#333;
      text-align:center;
+     scroll-behavior: smooth; /* تمرير سلس */
    }
+
    /* شريط التنقل */
    nav {
      background:#000428;
@@ -25,6 +27,11 @@
      gap:30px;
      padding:15px 10px;
      box-shadow:0 4px 10px rgba(0,0,0,0.25);
+     position:fixed; /* ثابت */
+     top:0;
+     right:0;
+     left:0;
+     z-index:1000;
    }
    nav a {
      color:white;
@@ -40,7 +47,7 @@
    header {
      background: linear-gradient(135deg,#004e92,#000428);
      color:white;
-     padding:60px 20px;
+     padding:100px 20px 60px; /* تعديل بسبب النافبار الثابت */
      box-shadow:0 4px 10px rgba(0,0,0,0.25);
    }
    header h1 {
@@ -92,6 +99,11 @@
      font-size:60px;
      margin-bottom:20px;
      color:#004e92;
+   }
+
+   /* أقسام إضافية */
+   section {
+     padding:80px 20px;
    }
 
    /* تذييل */
@@ -163,6 +175,18 @@
   </div>
 </main>
 
+<!-- قسم عن الموقع -->
+<section id="about">
+  <h2>عن الموقع</h2>
+  <p>هذا الموقع يهدف إلى مساعدة المبتدئين في تعلم اللغة الألمانية من خلال دروس مبسطة، أمثلة عملية، اختبارات قصيرة، وألعاب تعليمية ممتعة.</p>
+</section>
+
+<!-- قسم تواصل -->
+<section id="contact">
+  <h2>تواصل معنا</h2>
+  <p>يمكنك مراسلتنا عبر البريد الإلكتروني: <a href="mailto:info@german-learn.com">info@german-learn.com</a></p>
+</section>
+
 <!-- التذييل -->
 <footer>
   <p>© 2025 تعلم الألمانية بسهولة - جميع الحقوق محفوظة</p>
@@ -174,11 +198,6 @@
 </footer>
 </body>
 </html>
-
-
-
-
-
 
 
 
