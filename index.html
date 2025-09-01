@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>تعلم الألمانية بسهولة | موقع تعليمي</title>
+<meta name="description" content="تعلم اللغة الألمانية بسهولة مع دروس، أمثلة، اختبارات وألعاب تعليمية بطريقة واضحة وممتعة.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -15,6 +17,26 @@
      color:#333;
      text-align:center;
    }
+   /* شريط التنقل */
+   nav {
+     background:#000428;
+     display:flex;
+     justify-content:center;
+     gap:30px;
+     padding:15px 10px;
+     box-shadow:0 4px 10px rgba(0,0,0,0.25);
+   }
+   nav a {
+     color:white;
+     text-decoration:none;
+     font-weight:bold;
+     font-size:18px;
+     transition:color 0.3s ease;
+   }
+   nav a:hover {
+     color:#ff9800;
+   }
+
    header {
      background: linear-gradient(135deg,#004e92,#000428);
      color:white;
@@ -31,6 +53,7 @@
      margin:0;
      opacity:0.9;
    }
+
    main {
      padding:60px 20px;
      display:flex;
@@ -57,55 +80,101 @@
      font-size:22px;
      display:block;
      margin-top:15px;
+     transition: color 0.3s ease;
+   }
+   .section a:hover {
+     color:#ff9800;
+   }
+   .section a:active {
+     transform:scale(0.97);
    }
    .section-icon {
      font-size:60px;
      margin-bottom:20px;
      color:#004e92;
    }
+
+   /* تذييل */
+   footer {
+     background:#000428;
+     color:white;
+     padding:25px 15px;
+     margin-top:50px;
+     font-size:16px;
+   }
+   footer a {
+     color:#ff9800;
+     text-decoration:none;
+     margin:0 8px;
+   }
+   footer a:hover {
+     text-decoration:underline;
+   }
+
    @media (max-width:600px){
      header h1{font-size:34px;}
      header p{font-size:20px;}
      .section{width:90%; padding:35px;}
      .section a{font-size:26px;}
      .section-icon{font-size:70px;}
+     nav{flex-direction:column; gap:15px;}
    }
 </style>
 </head>
 <body>
-<header>
+<!-- شريط التنقل -->
+<nav role="navigation">
+  <a href="index.html">الرئيسية</a>
+  <a href="#about">عن الموقع</a>
+  <a href="#contact">تواصل معنا</a>
+</nav>
+
+<!-- الهيدر -->
+<header role="banner">
 <h1><i class="fas fa-graduation-cap"></i> أهلاً بك في موقع تعلم الألمانية</h1>
 <p>اختر القسم الذي تريده وابدأ رحلتك التعليمية بسهولة ووضوح</p>
 </header>
-<main>
-<div class="section">
-<div class="section-icon"><i class="fas fa-book"></i></div>
-<a href="words.html" aria-label="مفردات أساسية">مفردات أساسية</a>
-</div>
-<div class="section">
-<div class="section-icon"><i class="fas fa-pencil-alt"></i></div>
-<a href="words-examples.html" aria-label="جمل مع أمثلة">جمل مع أمثلة</a>
-</div>
-<div class="section">
-<div class="section-icon"><i class="fas fa-envelope-open-text"></i></div>
-<a href="a1_emails.html" aria-label="إيميلات تدريبية">إيميلات تدريبية</a>
-</div>
-<div class="section">
-<div class="section-icon"><i class="fas fa-language"></i></div>
-<a href="vocabulary.html" aria-label="مفردات متقدمة">مفردات متقدمة</a>
-</div>
-<div class="section">
-<div class="section-icon"><i class="fas fa-question-circle"></i></div>
-<a href="quizzes.html" aria-label="اختبارات قصيرة">اختبارات قصيرة</a>
-</div>
-<!-- 🎮 قسم اللعبة -->
-<div class="section">
-<div class="section-icon"><i class="fas fa-gamepad"></i></div>
-<a href="game.html" aria-label="اللعبة التعليمية">اللعبة التعليمية</a>
-</div>
+
+<!-- المحتوى الرئيسي -->
+<main role="main">
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-book"></i></div>
+    <a href="words.html" aria-label="مفردات أساسية">مفردات أساسية</a>
+  </div>
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-pencil-alt"></i></div>
+    <a href="words-examples.html" aria-label="جمل مع أمثلة">جمل مع أمثلة</a>
+  </div>
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-envelope-open-text"></i></div>
+    <a href="a1_emails.html" aria-label="إيميلات تدريبية">إيميلات تدريبية</a>
+  </div>
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-language"></i></div>
+    <a href="vocabulary.html" aria-label="مفردات متقدمة">مفردات متقدمة</a>
+  </div>
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-question-circle"></i></div>
+    <a href="quizzes.html" aria-label="اختبارات قصيرة">اختبارات قصيرة</a>
+  </div>
+  <div class="section">
+    <div class="section-icon"><i class="fas fa-gamepad"></i></div>
+    <a href="game.html" aria-label="اللعبة التعليمية">اللعبة التعليمية</a>
+  </div>
 </main>
+
+<!-- التذييل -->
+<footer>
+  <p>© 2025 تعلم الألمانية بسهولة - جميع الحقوق محفوظة</p>
+  <p>
+    <a href="#privacy">سياسة الخصوصية</a> | 
+    <a href="#terms">الشروط والأحكام</a> | 
+    <a href="#contact">تواصل معنا</a>
+  </p>
+</footer>
 </body>
 </html>
+
 
 
 
