@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>قصص قصيرة وأسئلة | تعلم الألمانية</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  body {
+    font-family: 'Cairo', sans-serif;
+    margin:0;
+    padding:0;
+    background:#f4f6fb;
+    color:#333;
+    text-align:right;
+  }
+  header {
+    background: linear-gradient(135deg,#004e92,#000428);
+    color:white;
+    padding:50px 20px;
+  }
+  header h1 { margin:0; font-size:32px; }
+  main { max-width:800px; margin:40px auto; padding:0 20px; }
+  .story { margin-bottom:50px; padding:20px; background:white; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+  .story p { margin:15px 0; line-height:1.6; }
+  .question { margin:15px 0; }
+  .options button {
+    display:block;
+    width:100%;
+    margin:6px 0;
+    padding:10px;
+    font-size:16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+  }
+  .options button:hover { background:#004e92; color:white; }
+  .options button.correct { background: #4caf50; color:white; }
+  .options button.wrong { background: #f44336; color:white; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>قصص قصيرة وأسئلة</h1>
+  <p>اقرأ كل قصة ثم أجب عن الأسئلة المدمجة داخل النص</p>
+</header>
+
+<main>
+
+<!-- القصة 1 -->
+<div class="story">
+  <h2>القصة الأولى</h2>
+  <p>Hallo! Ich heiße Anna und ich wohne in Berlin. Jeden Morgen trinke ich Kaffee und lese die Nachrichten.</p>
+
+  <div class="question">
+    <p>1. Wo wohnt Anna?</p>
+    <div class="options">
+      <button onclick="checkAnswer(this,'wrong')">München</button>
+      <button onclick="checkAnswer(this,'correct')">Berlin</button>
+      <button onclick="checkAnswer(this,'wrong')">Hamburg</button>
+    </div>
+  </div>
+
+  <p>Am Wochenende geht Anna gern spazieren im Park. Sie liebt die frische Luft und die Blumen.</p>
+
+  <div class="question">
+    <p>2. Was macht Anna am Wochenende?</p>
+    <div class="options">
+      <button onclick="checkAnswer(this,'wrong')">Sie bleibt zu Hause</button>
+      <button onclick="checkAnswer(this,'correct')">Sie geht spazieren im Park</button>
+      <button onclick="checkAnswer(this,'wrong')">Sie fährt nach München</button>
+    </div>
+  </div>
+</div>
+
+<!-- القصة 2 -->
+<div class="story">
+  <h2>القصة الثانية</h2>
+  <p>Peter arbeitet in einer Bibliothek. Jeden Tag liest er viele Bücher und hilft den Besuchern, das richtige Buch zu finden.</p>
+
+  <div class="question">
+    <p>1. Wo arbeitet Peter?</p>
+    <div class="options">
+      <button onclick="checkAnswer(this,'wrong')">Im Supermarkt</button>
+      <button onclick="checkAnswer(this,'wrong')">Im Büro</button>
+      <button onclick="checkAnswer(this,'correct')">In der Bibliothek</button>
+    </div>
+  </div>
+
+  <p>Am Abend schreibt Peter oft Notizen über die Bücher, die er gelesen hat.</p>
+
+  <div class="question">
+    <p>2. Was macht Peter am Abend?</p>
+    <div class="options">
+      <button onclick="checkAnswer(this,'wrong')">Er schaut Fernsehen</button>
+      <button onclick="checkAnswer(this,'correct')">Er schreibt Notizen über die Bücher</button>
+      <button onclick="checkAnswer(this,'wrong')">Er geht ins Kino</button>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<script>
+function checkAnswer(btn,type){
+  if(type==='correct'){
+    btn.classList.add('correct');
+  } else {
+    btn.classList.add('wrong');
+  }
+  const siblings = btn.parentNode.querySelectorAll('button');
+  siblings.forEach(b => b.disabled = true);
+}
+</script>
+
+</body>
+</html>
+
